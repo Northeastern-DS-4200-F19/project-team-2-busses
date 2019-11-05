@@ -9,8 +9,6 @@
 
     <!-- CSS Styling -->
     <!-- Bootstrap Styling (Overrides the given style sheet, will have to deal with later.) -->
-    <!-- <link href="lib/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"> -->
-
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -109,22 +107,7 @@
       </p>
     </div>
 
-    <!-- Your visualization here -->
-    <div class="container">
-    <div class="vis-holder" id="delay-vis">
-      <!-- Change viewbox to whatever you want, e.g. "0 0 1000 6000" This determines your aspect ratio and coordinate system
-      <!-- Delete all the sample SVG code below after the viewbox to before the closing tag. Populate this part of the SVG with D3. -->
 
-      <!-- <svg id="vis-svg"> -->
-        <!-- Don't delete the closing tag! -->
-      <!-- </svg> -->
-      <script src="lib/d3.v5.12.0/d3.min.js"></script>
-      <script id=visualization src="visualization.js"></script>
-
-
-
-    </div>
-  </div>
   <br>
 
     <div class="container">
@@ -164,6 +147,21 @@
         />
       </div>
     </div>
+    <br>
+        <!-- Your visualization here -->
+        <div class="container">
+          <div class="vis-holder" id="delay-vis">
+            <!-- Change viewbox to whatever you want, e.g. "0 0 1000 6000" This determines your aspect ratio and coordinate system
+            <!-- Delete all the sample SVG code below after the viewbox to before the closing tag. Populate this part of the SVG with D3. -->
+      
+            <!-- <svg id="vis-svg"> -->
+              <!-- Don't delete the closing tag! -->
+            <!-- </svg> -->
+      
+      
+      
+          </div>
+        </div>
 
     <!-- Your writeup goes here -->
     <div class="content-column">
@@ -295,7 +293,8 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
     <script src="lib/d3.v5.12.0/d3.min.js"></script>
-    <script src="index.js"></script>
+    <script src="visualization.js"></script>
+    
     
   </body>
 </html>
