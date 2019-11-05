@@ -5,7 +5,7 @@ var height = 600 - margin.top - margin.bottom;
 
 //create the svg
 var svg = d3
-  .select("#route-sl4-delay-vis")
+  .select("#route-43-delay-vis")
   .append("svg")
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
@@ -16,7 +16,7 @@ var x = d3.scaleBand().range([0, width]);
 
 var y = d3.scaleLinear().range([height, 0]);
 
-d3.csv("data/inbound-static-min-delay/route-1-inbound-delay.csv").then(function(data) {
+d3.csv("data/inbound-static-min-delay/route-43-inbound-delay.csv").then(function(data) {
   console.log(data)
 
   //format the data
@@ -52,8 +52,8 @@ d3.csv("data/inbound-static-min-delay/route-1-inbound-delay.csv").then(function(
     .attr("height", function(d) {
       return height - y(d.Delay);
     })
-    .attr("fill", "#cc79a1")
-    .attr("stroke", "#8e5470");
+    .attr("fill", "#d55e00")
+    .attr("stroke", "#a24700");
 
   //add X Axis
   svg

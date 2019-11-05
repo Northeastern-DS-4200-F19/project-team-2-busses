@@ -16,7 +16,7 @@ var x = d3.scaleBand().range([0, width]);
 
 var y = d3.scaleLinear().range([height, 0]);
 
-d3.csv("data/inbound-static-min-delay/route-1-inbound-delay.csv").then(function(data) {
+d3.csv("data/inbound-static-min-delay/route-sl5-inbound-delay.csv").then(function(data) {
   console.log(data)
 
   //format the data
@@ -52,8 +52,8 @@ d3.csv("data/inbound-static-min-delay/route-1-inbound-delay.csv").then(function(
     .attr("height", function(d) {
       return height - y(d.Delay);
     })
-    .attr("fill", "#cc79a1")
-    .attr("stroke", "#8e5470");
+    .attr("fill", "#009e73")
+    .attr("stroke", "#006b4e");
 
   //add X Axis
   svg
