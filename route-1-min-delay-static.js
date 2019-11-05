@@ -16,8 +16,8 @@ var x = d3.scaleBand().range([0, width]);
 
 var y = d3.scaleLinear().range([height, 0]);
 
-d3.csv("data/route-43-inbound-delay.csv").then(function(data) {
-  //console.log(data)
+d3.csv("data/inbound-static-min-delay/route-43-inbound-delay.csv").then(function(data) {
+  console.log(data)
 
   //format the data
   data.forEach(function(d) {
@@ -70,5 +70,5 @@ d3.csv("data/route-43-inbound-delay.csv").then(function(data) {
   svg
     .append("g")
     .call(d3.axisLeft(y))
-    .padding(0.2);
+    
 });
