@@ -21,6 +21,46 @@ h1, h2, h3 {
   height: 100%;
 }
 
+#route1-btn:active {
+	background-color: #cc79a1;
+	border-color: #8e5470;
+  }
+  
+  #route1-btn {
+	background-color: #e5bcd0;
+	border-color: #8e5470;
+  }
+  
+  #route43-btn:active {
+	background-color: #d55e00;
+	border-color: #a24700;
+  }
+  
+  #route43-btn {
+	background-color: #eaae7f;
+	border-color: #a24700;
+  }
+  
+  #routeSL4-btn:active {
+	background-color: #0072b2;
+	border-color: #00517f;
+  }
+  
+  #routeSL4-btn {
+	background-color: #99c6e0;
+	border-color: #00517f;
+  }
+  
+  #routeSL5-btn:active {
+	background-color: #009e73;
+	border-color: #006b4e;
+  }
+  
+  #routeSL5-btn {
+	background-color: #b2e1d5;
+	border-color: #006b4e;
+  }
+
 #scrubbar {
 	/* width of the contianer*/
 	width: 625px;
