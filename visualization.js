@@ -36,7 +36,22 @@ d3.csv("data/route-43-inbound-delay.csv")
             .attr("x", function(d) {return x(d.Stop); })
             .attr("width", x.bandwidth())
             .attr("y", function(d) {return y(d.Delay); })
-            .attr("height", function(d) {return height - y(d.Delay); });
+            .attr("height", function(d) {return height - y(d.Delay); })
+            .attr("fill", "#cc79a1")
+            .attr("stroke", "#8e5470");
+
+        //add X Axis
+        svg.append("g")
+            .attr("transform", "translate(0," + height + ")")
+            .call(d3.axisBottom(x))
+            .selectAll("text")
+            .attr("transform", "translate(-10,0)rotate(-45)")
+            .style("text-anchor", "end");;
+
+        //add Y axis
+        svg.append("g")
+            .call(d3.axisLeft(y))
+            .padding(0.2);
     });
 
                 
