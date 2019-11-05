@@ -11,6 +11,7 @@
     <!-- Bootstrap Styling (Overrides the given style sheet, will have to deal with later.) -->
     <!-- <link href="lib/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="style.css" />
+    <link href="lib/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Favicons -->
     <link
@@ -102,9 +103,40 @@
     <div class="vis-holder">
       <!-- Change viewbox to whatever you want, e.g. "0 0 1000 6000" This determines your aspect ratio and coordinate system -->
       <!-- Delete all the sample SVG code below after the viewbox to before the closing tag. Populate this part of the SVG with D3. -->
+      
       <svg id="vis-svg">
         <!-- Don't delete the closing tag! -->
       </svg>
+    
+    </div>
+
+    <div class="container">
+      <div id="scrubbar">
+        <input
+          type="range"
+          min="1"
+          max="100"
+          value="0"
+          class="slider"
+          id="myScrubber"
+        />
+      </div>
+    </div>
+    <div class="container">
+      <div class="btn-group-toggle" data-toggle="buttons" id="legend">
+        <label class="btn btn-secondary active" id="route1-btn">
+          <input type="checkbox" checked autocomplete="off" /> Route 1
+        </label>
+        <label class="btn btn-secondary active" id="route43-btn">
+          <input type="checkbox" checked autocomplete="off" /> Route 43
+        </label>
+        <label class="btn btn-secondary active" id="routeSL4-btn">
+          <input type="checkbox" checked autocomplete="off" /> Route SL4
+        </label>
+        <label class="btn btn-secondary active" id="routeSL5-btn">
+          <input type="checkbox" checked autocomplete="off" /> Route SL5
+        </label>
+      </div>
     </div>
 
     <!-- Your writeup goes here -->
