@@ -22,7 +22,7 @@ public class ReadJSONSchedule {
         {
             JSONParser jsonParser = new JSONParser();
 
-            JSONObject jsonObject = (JSONObject) jsonParser.parse(new FileReader("C:\\Users\\mihir\\Downloads\\routeSL5schedules.json"));
+            JSONObject jsonObject = (JSONObject) jsonParser.parse(new FileReader("C:\\Users\\mihir\\Downloads\\route1schedule.json"));
 
             JSONArray jsonArray = (JSONArray) jsonObject.get("data");
             str.append("{\"data\":[");
@@ -60,15 +60,15 @@ public class ReadJSONSchedule {
                 str.append(jO9.get("id"));
 
                 if (iterator.hasNext()){
-                    str.append("\"},");
+                    str.append("\"}},");
                 } else {
-                    str.append("\"}");
+                    str.append("\"}}");
                 }
             }
-            str.append("}");
+            str.append("]}");
 
             try {
-                FileWriter file = new FileWriter("C:\\Users\\mihir\\Desktop\\routeSL5schedule.json");
+                FileWriter file = new FileWriter("C:\\Users\\mihir\\Desktop\\route1schedule.json");
                 file.write(str.toString());
                 file.flush();
                 file.close();

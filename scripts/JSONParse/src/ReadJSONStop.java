@@ -23,7 +23,7 @@ public class ReadJSONStop
         {
             JSONParser jsonParser = new JSONParser();
 
-            JSONObject jsonObject = (JSONObject) jsonParser.parse(new FileReader("C:\\Users\\mihir\\Downloads\\routeSL5stops.json"));
+            JSONObject jsonObject = (JSONObject) jsonParser.parse(new FileReader("C:\\Users\\mihir\\Downloads\\route1stops.json"));
 
             JSONArray jsonArray = (JSONArray) jsonObject.get("data");
             str.append("{\"data\":[");
@@ -41,16 +41,16 @@ public class ReadJSONStop
                 str.append("\",\"stop_id\":\"");
                 str.append(jO2.get("id"));
                 if (iterator.hasNext()){
-                    str.append("\"},");
+                    str.append("\"}},");
                 } else {
-                    str.append("\"}");
+                    str.append("\"}}");
                 }
             }
-            str.append("}");
+            str.append("]}");
 
 
             try {
-                FileWriter file = new FileWriter("C:\\Users\\mihir\\Desktop\\routeSL5stops.json");
+                FileWriter file = new FileWriter("C:\\Users\\mihir\\Desktop\\route1stops.json");
                 file.write(str.toString());
                 file.flush();
                 file.close();
