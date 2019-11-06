@@ -3,7 +3,7 @@ var margin = { top: 80, right: 80, bottom: 80, left: 80 };
 var width = 600 - margin.left - margin.right;
 var height = 600 - margin.top - margin.bottom;
 
-//create the svg
+//create the svg and target the route-43-delay-vis contianer
 var svg = d3
   .select("#route-43-delay-vis")
   .append("svg")
@@ -16,6 +16,7 @@ var x = d3.scaleBand().range([0, width]);
 
 var y = d3.scaleLinear().range([height, 0]);
 
+//load in the data
 d3.csv("data/inbound-static-min-delay/route-43-inbound-delay.csv").then(
   function(data) {
     console.log(data);
@@ -87,5 +88,14 @@ d3.csv("data/inbound-static-min-delay/route-43-inbound-delay.csv").then(
       .attr("dy", "1em")
       .style("text-anchor", "middle")
       .text("Minute Delay");
+
+      //add a chart title
+      svg.append("text")
+        .attr("x", (width / 2))             
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "16px") 
+        .style("text-decoration", "underline")  
+        .text("Route 43 Inbound Trip Minute Delay");
   }
 );
