@@ -21,7 +21,7 @@ public class ReadJSONPredictions {
         {
             JSONParser jsonParser = new JSONParser();
 
-            JSONObject jsonObject = (JSONObject) jsonParser.parse(new FileReader("C:\\Users\\mihir\\Downloads\\routeSL5predictions.json"));
+            JSONObject jsonObject = (JSONObject) jsonParser.parse(new FileReader("C:\\Users\\mihir\\Downloads\\route1predictions.json"));
 
             JSONArray jsonArray = (JSONArray) jsonObject.get("data");
             str.append("{\"data\":[");
@@ -64,15 +64,15 @@ public class ReadJSONPredictions {
                 str.append(jO11.get("id"));
 
                 if (iterator.hasNext()){
-                    str.append("\"},");
+                    str.append("\"}},");
                 } else {
-                    str.append("\"}");
+                    str.append("\"}}");
                 }
             }
-            str.append("}");
+            str.append("]}");
 
             try {
-                FileWriter file = new FileWriter("C:\\Users\\mihir\\Desktop\\routeSL5predictions.json");
+                FileWriter file = new FileWriter("C:\\Users\\mihir\\Desktop\\route1predictions.json");
                 file.write(str.toString());
                 file.flush();
                 file.close();
