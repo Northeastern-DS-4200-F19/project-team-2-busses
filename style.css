@@ -25,12 +25,27 @@ h3 {
   height: 100%;
 }
 
+#map {
+  width: 900px;
+  height: 500px;
+  margin: 40px auto;
+}
+
+#scrubbar {
+  width: 900px;
+  height: 20px;
+  margin: 40px auto;
+}
+.lineConnect {
+  fill: none;
+  stroke: black;
+  opacity: 1;
+}
+
 #route1-btn:active {
   background-color: #cc79a1;
   border-color: #8e5470;
 }
-
-
 
 #route1-btn {
   background-color: #e5bcd0;
@@ -103,7 +118,7 @@ h3 {
 
 /* Fork on GitHub ribbon via https://codepo8.github.io/css-fork-on-github-ribbon/# */
 #forkongithub a {
-  background: #00f ; 
+  background: #00f;
   color: #fff;
   text-decoration: none;
   font-family: arial, sans-serif;
@@ -158,4 +173,3 @@ h3 {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
   }
 }
-
