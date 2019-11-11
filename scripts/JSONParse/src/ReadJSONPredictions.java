@@ -21,7 +21,7 @@ public class ReadJSONPredictions {
         {
             JSONParser jsonParser = new JSONParser();
 
-            JSONObject jsonObject = (JSONObject) jsonParser.parse(new FileReader("C:\\Users\\mihir\\Downloads\\route1predictions.json"));
+            JSONObject jsonObject = (JSONObject) jsonParser.parse(new FileReader("C:\\Users\\mihir\\Desktop\\JSONS\\route1predictions_11_11_19.json"));
 
             JSONArray jsonArray = (JSONArray) jsonObject.get("data");
             str.append("{\"data\":[");
@@ -72,7 +72,7 @@ public class ReadJSONPredictions {
             str.append("]}");
 
             try {
-                FileWriter file = new FileWriter("C:\\Users\\mihir\\Desktop\\route1predictions.json");
+                FileWriter file = new FileWriter("C:\\Users\\mihir\\Desktop\\route1predictions_11_11_19.json");
                 file.write(str.toString());
                 file.flush();
                 file.close();
