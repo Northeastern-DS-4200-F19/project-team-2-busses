@@ -2,11 +2,16 @@
 var map = L.map("map").setView([42.35, -71.08], 13);
 
 // load a tile layer
-L.tileLayer("https://tiles.mapc.org/basemap/{z}/{x}/{y}.png", {
-  attribution:
-    'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
-  maxZoom: 17,
-  minZoom: 9
+// L.tileLayer("https://tiles.mapc.org/basemap/{z}/{x}/{y}.png", {
+//   attribution:
+//     'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
+//   maxZoom: 17,
+//   minZoom: 9
+// }).addTo(map);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 17,
+    minZoom: 9
 }).addTo(map);
 
 var svg = d3.select(map.getPanes().overlayPane).append("svg"),
