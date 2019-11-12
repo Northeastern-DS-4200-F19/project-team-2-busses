@@ -2,40 +2,43 @@
 var map = L.map("map").setView([42.35, -71.08], 13);
 
 // load a tile layer
-// L.tileLayer("https://tiles.mapc.org/basemap/{z}/{x}/{y}.png", {
-//   attribution:
-//     'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
-//   maxZoom: 17,
-//   minZoom: 9
-// }).addTo(map);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    maxZoom: 17,
-    minZoom: 9
+L.tileLayer("http://tiles.mapc.org/basemap/{z}/{x}/{y}.png", {
+  attribution:
+    'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
+  maxZoom: 17,
+  minZoom: 9
 }).addTo(map);
+// L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+//     maxZoom: 17,
+//     minZoom: 9
+// }).addTo(map);
 
 var svg = d3.select(map.getPanes().overlayPane).append("svg"),
   g = svg.append("g").attr("class", "leaflet-zoom-hide");
 
-d3.json("map.geojson", function(collection) {
+d3.json("map.geojson").then(function(collection) {
+
+  
+
   var featuresdata = collection.features.filter(function(d) {
-    return d.properties.route == 1 || 43 || 751 || 748;
+    return d.properties.route == 1 || 43 || 751 || 748
   });
 
-  var transform = d3.geo.transform({
+  var transform = d3.geoTransform({
     point: projectPoint
   });
 
-  var d3path = d3.geo.path().projection(transform);
+  var d3path = d3.geoPath().projection(transform);
 
   function projectPoint(x, y) {
     var point = map.latLngToLayerPoint(new L.LatLng(y, x));
     this.stream.point(point.x, point.y);
   }
 
-  var toLine = d3.svg
+  var toLine = d3
     .line()
-    .interpolate("linear")
+    .curve(d3.curveLinear)
     .x(function(d) {
       return applyLatLngToLayer(d).x;
     })
