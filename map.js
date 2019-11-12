@@ -17,28 +17,25 @@ L.tileLayer("http://tiles.mapc.org/basemap/{z}/{x}/{y}.png", {
 var svg = d3.select(map.getPanes().overlayPane).append("svg"),
   g = svg.append("g").attr("class", "leaflet-zoom-hide");
 
-d3.json("map.geojson").then(function(collection) {
-
-  
-
+d3.json("map.geojson", function(collection) {
   var featuresdata = collection.features.filter(function(d) {
-    return d.properties.route == 1 || 43 || 751 || 748
+    return d.properties.route == 1 || 43;
   });
 
-  var transform = d3.geoTransform({
+  var transform = d3.geo.transform({
     point: projectPoint
   });
 
-  var d3path = d3.geoPath().projection(transform);
+  var d3path = d3.geo.path().projection(transform);
 
   function projectPoint(x, y) {
     var point = map.latLngToLayerPoint(new L.LatLng(y, x));
     this.stream.point(point.x, point.y);
   }
 
-  var toLine = d3
+  var toLine = d3.svg
     .line()
-    .curve(d3.curveLinear)
+    .interpolate("linear")
     .x(function(d) {
       return applyLatLngToLayer(d).x;
     })

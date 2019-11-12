@@ -25,6 +25,11 @@ h3 {
   height: 100%;
 }
 
+/* .delay-chart {
+  width: 100px;
+  height: 100px;
+} */
+
 #map {
   width: 900px;
   height: 500px;

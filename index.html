@@ -19,8 +19,8 @@
     
     <!-- <link rel="stylesheet" href="https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/> -->
     <link rel="stylesheet" href="lib/leaflet/leaflet.css" />
-   <script src="lib/leaflet/leaflet.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <script src="lib/leaflet/leaflet.js"></script>
     <!-- <script src="https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script> -->
     <!-- Favicons -->
     <link
@@ -159,21 +159,21 @@
     </div>
     <br />
     <!-- Your visualization here -->
-    <div class="container">
-      <div class="vis-holder" id="route-43-delay-vis"></div>
-    </div>
     
-    <div class="container">
-      <div class="vis-holder" id="route-1-delay-vis"></div>
-    </div>
+      <div  id="route-43-delay-vis" class="delay-chart"></div>
     
-    <div class="container">
-      <div class="vis-holder" id="route-sl4-delay-vis"></div>
-    </div>
     
-    <div class="container">
-      <div class="vis-holder" id="route-sl5-delay-vis"></div>
-    </div>
+    
+      <div  id="route-1-delay-vis" class="delay-chart"></div>
+    
+    
+    
+      <div  id="route-sl4-delay-vis" class="delay-chart"></div>
+    
+    
+    
+      <div  id="route-sl5-delay-vis" class="delay-chart"></div>
+    
 
     <!-- Your writeup goes here -->
     <div class="content-column">
@@ -296,9 +296,12 @@
 
     <!-- Scripts at the end avoid need for dealing with async, defer, or onload event handlers -->
     
-    <script src="lib/d3.v5.12.0/d3.min.js"></script>
-    
+    <!-- <script src="lib/d3.v5.12.0/d3.min.js"></script> -->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="map.js"></script>
-    <script src="route-43-min-delay-static.js"></script>
+    <!-- <script src="route-1-min-delay-static.js"></script> -->
+    <!-- <script src="route-43-min-delay-static.js"></script> -->
+    <!-- <script src="route-sl4-min-delay-static.js"></script>
+    <script src="route-sl5-min-delay-static.js"></script> -->
   </body>
 </html>

@@ -5,7 +5,7 @@ var height = 600 - margin.top - margin.bottom;
 
 //create the svg
 var svg = d3
-  .select("#route-sl4-delay-vis")
+  .select("#route-1-delay-vis")
   .append("svg")
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
