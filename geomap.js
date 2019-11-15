@@ -4,7 +4,7 @@ function map(data) {
     attribution:
       'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
     maxZoom: 17,
-    minZoom: 9
+    minZoom: 13
   });
 
   var map = L.map("map")
