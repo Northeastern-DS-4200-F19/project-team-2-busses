@@ -235,9 +235,14 @@
 
       <p>
         <em
-          >Expectation: Data sources match the problem statement and are
-          appropriate. These descriptions should be very explicit so someone
-          could read your page and properly reproduce your results.</em
+          >All of our data is from the V3 API provided by the MBTA. We utilized 4 main datasets: Predictons,
+		  Schedules, Trips, and Stops, all of which come as JSONS. Depending on the visualization and its needs,
+		  we decided to convert any necessary date to CSV files for ease. This also made the data manipulation
+		  process much easier as we could do much of it in Excel. Converting to a CSV file was made easy by the 
+          multitude of online JSON/CSV converter tools. Each of the sheets has an ID associated for each instance. Each 
+		  schedule is unique to each route. The schedule has a list of each stop along the way as well as its arrival/departure
+		  time. Each trip follows a schedule and has the actual arrival/departure times. Finally, the preditoons follow each trip 
+		  with its own list of arrival and departure times per stop.</em
         >
       </p>
 
