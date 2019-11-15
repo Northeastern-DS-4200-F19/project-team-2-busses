@@ -1,0 +1,1373 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Massachusetts Ave @ Holyoke St",
+        "route": 1,
+        "minuteDelay": 1,
+        "id": "s1" 
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.118124,
+          42.373259
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Massachusetts Ave @ Johnston Gate",
+        "route": 1,
+        "minuteDelay": 2,
+        "id":  "s2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.118511,
+          42.375131
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Quincy St @ Broadway Opp Fogg Museum",
+        "route": 1,
+        "minuteDelay": 1,
+        "id":  "s3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.11457,
+          42.374685
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Quincy St @ Harvard St",
+        "route": 1,
+        "minuteDelay": 1,
+        "id":  "s4"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.115202,
+          42.372401
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Mt Auburn St @ Dewolfe St",
+        "route": 1,
+        "minuteDelay": 1,
+        "id":  "s5"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.11597,
+          42.370925
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Mt Auburn St @ Putnam Ave",
+        "route": 1,
+        "minuteDelay": 1,
+        "id":  "s6"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.113514,
+          42.370044
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Massachusetts Ave @ Bay St",
+        "route": 1,
+        "minuteDelay": 2,
+        "id":  "s7"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.110427,
+          42.368951
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Massachusetts Ave @ Hancock St",
+        "route": 1,
+        "minuteDelay": 2,
+        "id":  "s8"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.108936,
+          42.36835
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Massachusetts Ave @ Pleasant St",
+        "route": 1,
+        "minuteDelay": 2,
+        "id":  "s9"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.106102,
+          42.366717
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Massachusetts Ave @ Pearl St",
+        "route": 1,
+        "minuteDelay": 2,
+        "id":  "s10"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.103074,
+          42.364915
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Massachusetts Ave @ Sidney St",
+        "route": 1,
+        "minuteDelay": 1,
+        "id":  "s11"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.103074,
+          42.364915
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Massachusetts Ave @ Albany St",
+        "route": 1,
+        "minuteDelay": 2,
+        "id":  "s12"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.096014,
+          42.360708
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "84 Massachusetts Ave",
+        "route": 1,
+        "minuteDelay": 2,
+        "id":  "s13"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.09363,
+          42.358941
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Massachusetts Ave @ Marlborough St",
+        "route": 1,
+        "minuteDelay": 2,
+        "id":  "s14"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.089148,
+          42.34995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Massachusetts Ave @ Newbury St",
+        "route": 1,
+        "minuteDelay": 2,
+        "id":  "s15"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.088146,
+          42.347937
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Massachusetts Ave Opp Christian Science Ctr",
+        "route": 1,
+        "minuteDelay": 3,
+        "id":  "s16"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.086458,
+          42.344366
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Massachusetts Ave @ Huntington Ave",
+        "route": 1,
+        "minuteDelay": 1,
+        "id":  "s17"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.084701,
+          42.342478
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Massachusetts Ave @ Massachusetts Ave Station",
+        "route": 1,
+        "minuteDelay": 2,
+        "id":  "s18"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.083328,
+          42.341553
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Massachusetts Ave @ Columbus Ave",
+        "route": 1,
+        "minuteDelay": 1,
+        "id":  "s19"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.081947,
+          42.340624
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Massachusetts Ave @ Tremont St",
+        "route": 1,
+        "minuteDelay": 2,
+        "id":  "s20"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.080299,
+          42.339074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Massachusetts Ave @ Washington St",
+        "route": 1,
+        "minuteDelay": 3,
+        "id":  "s21"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.076941,
+          42.336295
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Massachusetts Ave @ Harrison Ave",
+        "route": 1,
+        "minuteDelay": 3,
+        "id":  "s22"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.07511,
+          42.334748
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Massachusetts Ave @ Albany St",
+        "route": 1,
+        "minuteDelay": 2,
+        "id":  "s23"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.073689,
+          42.333539
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Albany St @ Randall St",
+        "route": 1,
+        "minuteDelay": 2,
+        "id":  "s24"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.076347,
+          42.331675
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Melnea Cass Blvd @ Harrison Ave",
+        "route": 1,
+        "minuteDelay": 2,
+        "id":  "s25"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.079147,
+          42.332066
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Washington St @ Williams St",
+        "route": 1,
+        "minuteDelay": 2,
+        "id":  "s26"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.081738,
+          42.332045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Washington St @ Ruggles St",
+        "route": 1,
+        "minuteDelay": 1,
+        "id":  "s27"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.082875,
+          42.331035
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#cc79a1",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Dudley Square",
+        "route": 1,
+        "minuteDelay": 0,
+        "id":  "s28"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.083982,
+          42.329544
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#a24700",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Ruggles",
+        "route": 43,
+        "minuteDelay": 0,
+        "id":  "s29"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.088961,
+          42.336377
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#a24700",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Tremont St @ Ruggles St",
+        "route": 43,
+        "minuteDelay": 2,
+        "id":  "s30"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.088549,
+          42.334793
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#a24700",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Tremont St @ Melnea Cass Blvd",
+        "route": 43,
+        "minuteDelay": 3,
+        "id":  "s31"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.086826,
+          42.335698
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#a24700",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Tremont St @ Hammond St",
+        "route": 43,
+        "minuteDelay": 2,
+        "id":  "s32"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.084022,
+          42.337226
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#a24700",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Tremont St @ Lenox St",
+        "route": 43,
+        "minuteDelay": 5,
+        "id":  "s33"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.083038,
+          42.337782
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#a24700",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Tremont St @ Northampton St",
+        "route": 43,
+        "minuteDelay": 2,
+        "id":  "s34"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.081156,
+          42.338746
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#a24700",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Tremont St @ W Springfield St",
+        "route": 43,
+        "minuteDelay": 2,
+        "id":  "s35"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.079623,
+          42.339584
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#a24700",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Tremont St @ W Concord St",
+        "route": 43,
+        "minuteDelay": 3,
+        "id":  "s36"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.078156,
+          42.340407
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#a24700",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Tremont St @ W Newton St",
+        "route": 43,
+        "minuteDelay": 0,
+        "id":  "s37"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.076653,
+          42.341236
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#a24700",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Tremont St @ W Brookline St",
+        "route": 43,
+        "minuteDelay": 0,
+        "id":  "s38"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.075413,
+          42.341887
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#a24700",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Tremont St @ W Dedham St",
+        "route": 43,
+        "minuteDelay": 0,
+        "id":  "s39"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.073943,
+          42.342666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#a24700",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Tremont St @ Waltham St",
+        "route": 43,
+        "minuteDelay": 0,
+        "id":  "s40"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.071653,
+          42.343873
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#a24700",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Tremont St @ E Berkeley St",
+        "route": 43,
+        "minuteDelay": 3,
+        "id":  "s41"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.069868,
+          42.345145
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#a24700",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Tremont St @ Herald St",
+        "route": 43,
+        "minuteDelay": 2,
+        "id":  "s42"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.068607,
+          42.347363
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#a24700",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Tremont St @ Marginal St",
+        "route": 43,
+        "minuteDelay": 2,
+        "id":  "s43"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.067595,
+          42.34818
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#a24700",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Charles St S @ Park Plaza",
+        "route": 43,
+        "minuteDelay": 4,
+        "id":  "s44"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.067101,
+          42.351748
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#a24700",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Charles St @ Beacon St",
+        "route": 43,
+        "minuteDelay": 5,
+        "id":  "s45"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.06926,
+          42.356083
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#a24700",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Beacon St opp Walnut St",
+        "route": 43,
+        "minuteDelay": 6,
+        "id":  "s46"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.065766,
+          42.356954
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#a24700",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Beacon St @ Park St",
+        "route": 43,
+        "minuteDelay": 4,
+        "id":  "s47"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.06328,
+          42.357656
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#a24700",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Tremont St opp Temple Pl",
+        "route": 43,
+        "minuteDelay": 2,
+        "id":  "s48"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.062911,
+          42.355692
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#0072b2",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Dudley Square",
+        "route": 751,
+        "minuteDelay": 0,
+        "id":  "s49"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.083982,
+          42.329544
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#0072b2",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Washington St @ Melnea Cass Blvd - Silver Line",
+        "route": 751,
+        "minuteDelay": 1,
+        "id":  "s50"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.080799,
+          42.333021
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#0072b2",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Washington St @ Lenox St",
+        "route": 751,
+        "minuteDelay": 0,
+        "id":  "s51"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.078873,
+          42.334949
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#0072b2",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Washington St @ Massachusetts Ave",
+        "route": 751,
+        "minuteDelay": 0,
+        "id":  "s52"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.07707,
+          42.336339
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#0072b2",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Washington St @ Worcester St",
+        "route": 751,
+        "minuteDelay": 0,
+        "id":  "s53"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.075479,
+          42.337524
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#0072b2",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Washington St @ E Newton St",
+        "route": 751,
+        "minuteDelay": 0,
+        "id":  "s54"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.073677,
+          42.338763
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#0072b2",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Washington St @ Union Pk",
+        "route": 751,
+        "minuteDelay": 0,
+        "id":  "s55"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.069417,
+          42.341308
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#0072b2",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Washington St @ E Berkeley St",
+        "route": 751,
+        "minuteDelay": 2,
+        "id":  "s56"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.065927,
+          42.343824
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#0072b2",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Washington St @ Herald St",
+        "route": 751,
+        "minuteDelay": 2,
+        "id":  "s57"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.064848,
+          42.345582
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#0072b2",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Washington St @ Tufts Med Ctr",
+        "route": 751,
+        "minuteDelay": 0,
+        "id":  "s58"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.063413,
+          42.34997
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#0072b2",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Washington St @ Essex St",
+        "route": 751,
+        "minuteDelay": 0,
+        "id":  "s59"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.062581,
+          42.352288
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#0072b2",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Essex St @ Atlantic Ave",
+        "route": 751,
+        "minuteDelay": 0,
+        "id":  "s60"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.056003,
+          42.35176
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#009e73",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Dudley Square",
+        "route": 748,
+        "minuteDelay": 0,
+        "id":  "s61"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.083982,
+          42.329544
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#009e73",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Washington St @ Melnea Cass Blvd - Silver Line",
+        "route": 748,
+        "minuteDelay": 1,
+        "id":  "s62"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.080799,
+          42.333021
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#009e73",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Washington St @ Lenox St",
+        "route": 748,
+        "minuteDelay": 2,
+        "id":  "s63"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.078873,
+          42.334949
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#009e73",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Washington St @ Massachusetts Ave",
+        "route": 748,
+        "minuteDelay": 1,
+        "id":  "s64"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.07707,
+          42.336339
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#009e73",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Washington St @ Worcester St",
+        "route": 748,
+        "minuteDelay": 0,
+        "id":  "s65"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.075479,
+          42.337524
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#009e73",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Washington St @ E Newton St",
+        "route": 748,
+        "minuteDelay": 0,
+        "id":  "s66"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.073677,
+          42.338763
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#009e73",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Washington St @ Union Pk",
+        "route": 748,
+        "minuteDelay": 0,
+        "id":  "s67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.069417,
+          42.341308
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#009e73",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Washington St @ E Berkeley St",
+        "route": 748,
+        "minuteDelay": 0,
+        "id":  "s68"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.065927,
+          42.343824
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#009e73",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Washington St @ Herald St",
+        "route": 748,
+        "minuteDelay": 1,
+        "id":  "s69"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.064848,
+          42.345582
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#009e73",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Washington St @ Tufts Med Ctr",
+        "route": 748,
+        "minuteDelay": 2,
+        "id":  "s70"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.063413,
+          42.34997
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#009e73",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Tremont St @ Boylston Station",
+        "route": 748,
+        "minuteDelay": 0,
+        "id":  "s71"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.062581,
+          42.352288
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#009e73",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Temple Pl @ Washington St",
+        "route": 748,
+        "minuteDelay": 0,
+        "id":  "s72"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.062211,
+          42.355385
+        ]
+      }
+    }
+  ]
+}

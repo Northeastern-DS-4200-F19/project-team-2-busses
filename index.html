@@ -18,9 +18,20 @@
 
     
     <!-- <link rel="stylesheet" href="https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/> -->
-    <link rel="stylesheet" href="lib/leaflet/leaflet.css" />
+    <!-- <link rel="stylesheet" href="lib/leaflet/leaflet.css" /> -->
     <link rel="stylesheet" href="style.css" />
-    <script src="lib/leaflet/leaflet.js"></script>
+    <!-- <script src="lib/leaflet/leaflet.js"></script> -->
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+    crossorigin=""
+  />
+  <script
+    src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+    crossorigin=""
+  ></script>
     
     
     <!-- <script src="https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script> -->
@@ -162,20 +173,10 @@
     <br />
     <!-- Your visualization here -->
     <div class="vis-holder">
-      <div  id="route-43-delay-vis" class="delay-chart"></div>
-    
-    
-    
-      <div  id="route-1-delay-vis" class="delay-chart"></div>
-    
-    
-    
-      <div  id="route-sl4-delay-vis" class="delay-chart"></div>
-    
-    
-    
-      
-      <div  id="route-sl5-delay-vis" class="delay-chart"></div>
+      <div id="route1" class="vis"></div>
+      <div id="route43" class="vis"></div>
+      <div id="routesl4" class="vis"></div>
+      <div id="routesl5" class="vis"></div>
     </div>
 
     <!-- Your writeup goes here -->
@@ -304,8 +305,9 @@
     
     <script src="lib/d3.v5.12.0/d3.min.js"></script>
     <!-- <script src="route-43-min-delay-static.js"></script>  -->
-    <script src="https://d3js.org/d3.v3.min.js"></script>
-    <script src="map.js"></script>
+    <script src="geomap.js"></script>
+    <script src="bar.js"></script>
+    <script src="main.js"></script>
     <!-- <script src="route-1-min-delay-static.js"></script> -->
     <!-- <script src="route-43-min-delay-static.js"></script> -->
     <!-- <script src="route-sl4-min-delay-static.js"></script> -->
