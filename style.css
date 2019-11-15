@@ -41,6 +41,12 @@ h3 {
   height: 20px;
   margin: 40px auto;
 }
+
+.container {
+  width: 900px;
+  height: 20px;
+  margin: 40px auto;
+}
 .lineConnect {
   fill: none;
   stroke: black;
