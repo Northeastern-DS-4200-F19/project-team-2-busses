@@ -17,13 +17,13 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.csv("data/parallel/p1.csv").then(function(data) {
+d3.csv("data/parallel/p4.csv").then(function(data) {
   console.log(data)
 
   // Extract the list of dimensions and create a scale for each.
-  x.domain(dimensions = d3.keys(p1[0]).filter(function(d) {
+  x.domain(dimensions = d3.keys(p4[0]).filter(function(d) {
     return d != "name" && (y[d] = d3.scale.linear()
-        .domain(d3.extent(p1, function(p) { return +p[d]; }))
+        .domain(d3.extent(p4, function(p) { return +p[d]; }))
         .range([height, 0]));
   }));
 
@@ -31,7 +31,7 @@ d3.csv("data/parallel/p1.csv").then(function(data) {
   background = svg.append("g")
       .attr("class", "background")
     .selectAll("path")
-      .data(p1)
+      .data(p4)
     .enter().append("path")
       .attr("d", path);
 
@@ -39,7 +39,7 @@ d3.csv("data/parallel/p1.csv").then(function(data) {
   foreground = svg.append("g")
       .attr("class", "foreground")
     .selectAll("path")
-      .data(p1)
+      .data(p4)
     .enter().append("path")
       .attr("d", path);
 
