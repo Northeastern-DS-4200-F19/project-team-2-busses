@@ -1,52 +1,52 @@
-"data_attributes_name","data_attributes_latitude","data_attributes_longitude","data_attributes_stop_id"
-"Dudley Square",42.329544,-71.083982,"place-dudly"
-"Washington St opp Ruggles St",42.330957,-71.082754,"1"
-"Washington St @ Melnea Cass Blvd",42.332324,-71.081252,"2"
-"Melnea Cass Blvd @ Harrison Ave",42.332016,-71.079576,"6"
-"Albany St opp Randall St",42.331591,-71.076237,"10003"
-"Massachusetts Ave @ Albany St",42.333825,-71.073541,"57"
-"Massachusetts Ave @ Harrison Ave",42.334948,-71.074931,"58"
-"Massachusetts Ave @ Washington St",42.336621,-71.076956,"10590"
-"Massachusetts Ave @ Tremont St",42.339459,-71.080362,"87"
-"Massachusetts Ave @ Columbus Ave",42.340606,-71.081617,"88"
-"Massachusetts Ave @ Massachusetts Ave Station",42.34157,-71.083092,"188"
-"Massachusetts Ave @ St Botolph St",42.342303,-71.084121,"89"
-"Massachusetts Ave @ Clearway St",42.345331,-71.086739,"91"
-"Massachusetts Ave @ Newbury St",42.348005,-71.088033,"93"
-"Massachusetts Ave @ Beacon St",42.350773,-71.089334,"95"
-"77 Massachusetts Ave",42.359183,-71.093543,"97"
-"Massachusetts Ave @ Albany St",42.360758,-71.095722,"99"
-"Massachusetts Ave @ Sidney St",42.362988,-71.099486,"101"
-"Massachusetts Ave @ Prospect St",42.365291,-71.103404,"102"
-"Massachusetts Ave @ Bigelow St",42.366837,-71.106017,"104"
-"Massachusetts Ave @ Hancock St",42.36839,-71.108618,"106"
-"Massachusetts Ave @ Dana St",42.369265,-71.110773,"107"
-"Massachusetts Ave @ Trowbridge St",42.37027,-71.112998,"108"
-"Massachusetts Ave @ Bow St",42.372099,-71.115371,"109"
-"Massachusetts Ave @ Holyoke St",42.373259,-71.118124,"110"
-"Massachusetts Ave @ Johnston Gate",42.375131,-71.118511,"2168"
-"Quincy St @ Broadway opp Fogg Museum",42.374685,-71.11457,"2166"
-"Quincy St @ Harvard St",42.372401,-71.115202,"2167"
-"Mt Auburn St @ DeWolfe St",42.370925,-71.11597,"66"
-"Mt Auburn St @ Putnam Ave",42.370044,-71.113514,"67"
-"Massachusetts Ave @ Bay St",42.368951,-71.110427,"68"
-"Massachusetts Ave @ Hancock St",42.36835,-71.108936,"69"
-"Massachusetts Ave @ Pleasant St",42.366717,-71.106102,"71"
-"Massachusetts Ave @ Pearl St",42.364915,-71.103074,"72"
-"Massachusetts Ave @ Sidney St",42.362804,-71.099509,"73"
-"Massachusetts Ave @ Albany St",42.360708,-71.096014,"74"
-"84 Massachusetts Ave",42.358941,-71.09363,"75"
-"Massachusetts Ave @ Marlborough St",42.34995,-71.089148,"77"
-"Massachusetts Ave @ Newbury St",42.347937,-71.088146,"79"
-"Massachusetts Ave opp Christian Science Ctr",42.344366,-71.086458,"80"
-"Massachusetts Ave @ Huntington Ave",42.342478,-71.084701,"82"
-"Massachusetts Ave @ Massachusetts Ave Station",42.341553,-71.083328,"187"
-"Massachusetts Ave @ Columbus Ave",42.340624,-71.081947,"83"
-"Massachusetts Ave @ Tremont St",42.339074,-71.080299,"84"
-"Massachusetts Ave @ Washington St",42.336295,-71.076941,"59"
-"Massachusetts Ave @ Harrison Ave",42.334748,-71.07511,"854"
-"Massachusetts Ave @ Albany St",42.333539,-71.073689,"856"
-"Albany St @ Randall St",42.331675,-71.076347,"10100"
-"Melnea Cass Blvd @ Harrison Ave",42.332066,-71.079147,"10101"
-"Washington St @ Williams St",42.332045,-71.081738,"62"
-"Washington St @ Ruggles St",42.331035,-71.082875,"63"
+data_attributes_name,data_attributes_latitude,data_attributes_longitude,data_attributes_stop_id
+Dudley Square,42.329544,-71.083982,64
+Washington St opp Ruggles St,42.330957,-71.082754,1
+Washington St @ Melnea Cass Blvd,42.332324,-71.081252,2
+Melnea Cass Blvd @ Harrison Ave,42.332016,-71.079576,6
+Albany St opp Randall St,42.331591,-71.076237,10003
+Massachusetts Ave @ Albany St,42.333825,-71.073541,57
+Massachusetts Ave @ Harrison Ave,42.334948,-71.074931,58
+Massachusetts Ave @ Washington St,42.336621,-71.076956,10590
+Massachusetts Ave @ Tremont St,42.339459,-71.080362,87
+Massachusetts Ave @ Columbus Ave,42.340606,-71.081617,88
+Massachusetts Ave @ Massachusetts Ave Station,42.34157,-71.083092,188
+Massachusetts Ave @ St Botolph St,42.342303,-71.084121,89
+Massachusetts Ave @ Clearway St,42.345331,-71.086739,91
+Massachusetts Ave @ Newbury St,42.348005,-71.088033,93
+Massachusetts Ave @ Beacon St,42.350773,-71.089334,95
+77 Massachusetts Ave,42.359183,-71.093543,97
+Massachusetts Ave @ Albany St,42.360758,-71.095722,99
+Massachusetts Ave @ Sidney St,42.362988,-71.099486,101
+Massachusetts Ave @ Prospect St,42.365291,-71.103404,102
+Massachusetts Ave @ Bigelow St,42.366837,-71.106017,104
+Massachusetts Ave @ Hancock St,42.36839,-71.108618,106
+Massachusetts Ave @ Dana St,42.369265,-71.110773,107
+Massachusetts Ave @ Trowbridge St,42.37027,-71.112998,108
+Massachusetts Ave @ Bow St,42.372099,-71.115371,109
+Massachusetts Ave @ Holyoke St,42.373259,-71.118124,110
+Massachusetts Ave @ Johnston Gate,42.375131,-71.118511,2168
+Quincy St @ Broadway opp Fogg Museum,42.374685,-71.11457,2166
+Quincy St @ Harvard St,42.372401,-71.115202,2167
+Mt Auburn St @ DeWolfe St,42.370925,-71.11597,66
+Mt Auburn St @ Putnam Ave,42.370044,-71.113514,67
+Massachusetts Ave @ Bay St,42.368951,-71.110427,68
+Massachusetts Ave @ Hancock St,42.36835,-71.108936,69
+Massachusetts Ave @ Pleasant St,42.366717,-71.106102,71
+Massachusetts Ave @ Pearl St,42.364915,-71.103074,72
+Massachusetts Ave @ Sidney St,42.362804,-71.099509,73
+Massachusetts Ave @ Albany St,42.360708,-71.096014,74
+84 Massachusetts Ave,42.358941,-71.09363,75
+Massachusetts Ave @ Marlborough St,42.34995,-71.089148,77
+Massachusetts Ave @ Newbury St,42.347937,-71.088146,79
+Massachusetts Ave opp Christian Science Ctr,42.344366,-71.086458,80
+Massachusetts Ave @ Huntington Ave,42.342478,-71.084701,82
+Massachusetts Ave @ Massachusetts Ave Station,42.341553,-71.083328,187
+Massachusetts Ave @ Columbus Ave,42.340624,-71.081947,83
+Massachusetts Ave @ Tremont St,42.339074,-71.080299,84
+Massachusetts Ave @ Washington St,42.336295,-71.076941,59
+Massachusetts Ave @ Harrison Ave,42.334748,-71.07511,854
+Massachusetts Ave @ Albany St,42.333539,-71.073689,856
+Albany St @ Randall St,42.331675,-71.076347,10100
+Melnea Cass Blvd @ Harrison Ave,42.332066,-71.079147,10101
+Washington St @ Williams St,42.332045,-71.081738,62
+Washington St @ Ruggles St,42.331035,-71.082875,63
