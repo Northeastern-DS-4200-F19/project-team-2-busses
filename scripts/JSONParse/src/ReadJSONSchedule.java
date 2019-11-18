@@ -22,7 +22,7 @@ public class ReadJSONSchedule {
         {
             JSONParser jsonParser = new JSONParser();
 
-            JSONObject jsonObject = (JSONObject) jsonParser.parse(new FileReader("C:\\Users\\mihir\\Desktop\\JSONS\\routeSL5schedules.json"));
+            JSONObject jsonObject = (JSONObject) jsonParser.parse(new FileReader("C:\\Users\\mihir\\Desktop\\route43schedules.json"));
 
             JSONArray jsonArray = (JSONArray) jsonObject.get("data");
             str.append("{\"data\":[");
@@ -31,10 +31,21 @@ public class ReadJSONSchedule {
                 JSONObject jO1 = iterator.next();
                 JSONObject jO2 = (JSONObject) jO1.get("attributes");
                 str.append("{\"attributes\":{");
-                str.append("\"arrival_time\":\"");
-                str.append(jO2.get("arrival_time"));
-                str.append("\",\"departure_time\":\"");
-                str.append(jO2.get("departure_time"));
+                //str.append("\"arrival_time\":\"");
+                //str.append(jO2.get("arrival_time"));
+                str.append("\"time\":\"");
+                boolean a = false;
+                String check;
+                try {
+                    check = jO2.get("departure_time").toString();
+                } catch (Exception e) {
+                    a = true;
+                }
+                if (a) {
+                    str.append(jO2.get("arrival_time"));
+                } else {
+                    str.append(jO2.get("departure_time"));
+                }
                 str.append("\",\"direction_id\":\"");
                 str.append(jO2.get("direction_id"));
                 str.append("\",\"stop_sequence\":\"");
@@ -68,7 +79,7 @@ public class ReadJSONSchedule {
             str.append("]}");
 
             try {
-                FileWriter file = new FileWriter("C:\\Users\\mihir\\Desktop\\routeSL5schedules_11_11_19.json");
+                FileWriter file = new FileWriter("C:\\Users\\mihir\\Desktop\\test.json");
                 file.write(str.toString());
                 file.flush();
                 file.close();
@@ -77,7 +88,8 @@ public class ReadJSONSchedule {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            System.out.println("Oops");
         }
 
     }
