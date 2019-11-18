@@ -144,32 +144,44 @@
         />
       </div>
     
-    <div class="container">
-      <div class="btn-group-toggle" data-toggle="buttons" id="legend">
-        <label class="btn btn-secondary active" id="route1-btn">
-          <input type="checkbox"  /> Route 1
+      <div id="filters">
+        <label class="check-box-container" id="route-1-btn"
+          >Route 1
+          <input type="checkbox" checked="checked" name="filter-btn" />
+          <span class="checkmark"></span>
         </label>
-        <label class="btn btn-secondary active" id="route43-btn">
-          <input type="checkbox"  /> Route 43
+        <label class="check-box-container" id="route-43-btn"
+          >Route 43
+          <input type="checkbox" checked="checked" name="filter-btn" />
+          <span class="checkmark"></span>
         </label>
-        <label class="btn btn-secondary active" id="routeSL4-btn">
-          <input type="checkbox"  /> Route SL4
+        <label class="check-box-container" id="route-sl4-btn">
+          SL4
+          <input type="checkbox" checked="checked" name="filter-btn" />
+          <span class="checkmark"></span>
         </label>
-        <label class="btn btn-secondary active" id="routeSL5-btn">
-          <input type="checkbox"  /> Route SL5
+        <label class="check-box-container" id="route-sl5-btn"
+          >SL5
+          <input type="checkbox" checked="checked" name="filter-btn" />
+          <span class="checkmark"></span>
         </label>
-
-        <input
-          type="checkbox"
-          checked
-          data-toggle="toggle"
-          data-on="Inbound"
-          data-off="Outbound"
-          data-onstyle="light"
-          data-offstyle="light"
-        />
+        <br>
+        <button class="reveal-btn" onclick="selectAll()">Check All</button>
+        <button class="reveal-btn" onclick="UnSelectAll()">Check None</button>
+        <div class="onoffswitch">
+          <input
+            type="checkbox"
+            name="onoffswitch"
+            class="onoffswitch-checkbox"
+            id="myonoffswitch"
+            checked
+          />
+          <label class="onoffswitch-label" for="myonoffswitch">
+            <span class="onoffswitch-inner"></span>
+            <span class="onoffswitch-switch"></span>
+          </label>
+        </div>
       </div>
-    </div>
     <br />
     <!-- Your visualization here -->
     <div class="vis-holder">
@@ -348,6 +360,7 @@
     
     <script src="lib/d3.v5.12.0/d3.min.js"></script>
     <!-- <script src="route-43-min-delay-static.js"></script>  -->
+    <script src="filters.js"></script>
     <script src="geomap.js"></script>
     <script src="bar.js"></script>
     <script src="main.js"></script>
