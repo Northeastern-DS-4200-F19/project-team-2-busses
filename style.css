@@ -353,7 +353,7 @@ svg {
 
 /* on off maybe  */
 .onoffswitch {
-  position: relative; width: 110px; display: inline;
+  position: relative; width: 110px; 
   -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
 }
 .onoffswitch-checkbox {
