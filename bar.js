@@ -12,6 +12,7 @@ function barChart() {
     yValue = function(d) {
       return d[1];
     },
+    
     xScale = d3.scaleBand().padding(0.1),
     yScale = d3.scaleLinear(),
     xLabelText = "",
@@ -80,15 +81,13 @@ function barChart() {
         .attr("x", X)
         .attr("y", Y)
         .attr("id", function(d){
-            return d.properties.id; //<-- Sets the ID of the point to the stops name
+            return d.stopid; //<-- Sets the ID of the point to the stops name
           })
         .attr("width", xScale.bandwidth())
         .attr("height", function(d) {
           return innerHeight - Y(d);
         })
-        .attr("fill", function(features) {
-          return features.properties.color;
-        })
+        .attr("fill", "#000000")
         .attr("stroke", "#000000")
         // .on("mouseover", function(features) {
         //     d3.select(this).style("fill", "#ffff00");
@@ -101,31 +100,31 @@ function barChart() {
         //         return features.properties.color;
         //       })
         //   });
-        .on("mouseover", function(features) {
-            return barMouseOver(features);
-        })
-        .on("mouseout", function(features) {
-            return barMouseOverEnd(features);
-        });
+        // .on("mouseover", function(features) {
+        //     return barMouseOver(features);
+        // })
+        // .on("mouseout", function(features) {
+        //     return barMouseOverEnd(features);
+        // });
 
       bars.exit().remove();
     });
 
 
-    function barMouseOver(d) {
+    // function barMouseOver(d) {
 
-        d3.selectAll(("#" + d.properties.id))
-          .style("fill", "#ffff00")
-          .style("stroke", "#000000");
+    //     d3.selectAll(("#" + d.properties.id))
+    //       .style("fill", "#ffff00")
+    //       .style("stroke", "#000000");
       
-      };
+    //   };
     
     
-      function barMouseOverEnd(d) {
-        d3.selectAll(("#" + d.properties.id))
-        .style("fill", d.properties.color)
-        .style("stroke", "#000000");
-      }
+    //   function barMouseOverEnd(d) {
+    //     d3.selectAll(("#" + d.properties.id))
+    //     .style("fill", d.properties.color)
+    //     .style("stroke", "#000000");
+    //   }
   }
 
   // The x-accessor for the path generator; xScale ∘ xValue.

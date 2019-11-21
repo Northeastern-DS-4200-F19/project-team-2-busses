@@ -1,110 +1,264 @@
-// initialize the map
-var map = L.map("map").setView([42.35, -71.08], 13);
-
-// load a tile layer
-L.tileLayer("http://tiles.mapc.org/basemap/{z}/{x}/{y}.png", {
-  attribution:
-    'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
-  maxZoom: 17,
-  minZoom: 9
-}).addTo(map);
-// L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-//     maxZoom: 17,
-//     minZoom: 9
-// }).addTo(map);
-
-var svg = d3.select(map.getPanes().overlayPane).append("svg"),
-  g = svg.append("g").attr("class", "leaflet-zoom-hide");
-
-d3.json("map.geojson", function(collection) {
-  var featuresdata = collection.features.filter(function(d) {
-    return d.properties.route == 1 || 43;
+function map(d) {
+  var osmTiles = L.tileLayer("http://tiles.mapc.org/basemap/{z}/{x}/{y}.png", {
+    attribution:
+      'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
+    maxZoom: 13,
+    minZoom: 13
   });
 
-  var transform = d3.geo.transform({
-    point: projectPoint
-  });
+  var map = L.map("map")
+    .addLayer(osmTiles)
+    .setView([42.35, -71.08], 13);
 
-  var d3path = d3.geo.path().projection(transform);
+  map.scrollWheelZoom.disable();
+  map.touchZoom.disable();
+  map.doubleClickZoom.disable();
+  map.dragging.disable();
 
-  function projectPoint(x, y) {
-    var point = map.latLngToLayerPoint(new L.LatLng(y, x));
-    this.stream.point(point.x, point.y);
+  // var width = map.getBounds().getEast() - map.getBounds().getWest();
+  // var height = map.getBounds().getNorth() - map.getBounds().getSouth();
+  // console.log(width);
+  // console.log(height);
+
+  var width = 1000;
+  var height = 1000;
+  //append a svg level to the leaflet map
+  //var svg = d3.select(map.getPanes().overlayPane).append("svg");
+  var svg = d3
+    .select(map.getPanes().overlayPane)
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height);
+  //var g = svg.append("g").attr("class", "leaflet-zoom-hide");
+
+  var Brush = d3.brush().extent([
+    [0, 0],
+    [width, height]
+  ])
+  //.on("start brush", brushed)
+  //.on("end", brushEnd);
+
+  svg.append("g").call(Brush);
+
+  // var outbound = d.filter(function(d) {
+  //   return d.outbound == 1;
+  // });
+  // console.log(outbound);
+  // var inbound = d.filter(function(d) {
+  //   return d.outbound == 0;
+  // });
+
+  // function whichDirection() {
+  //     if(direction == 1) {
+  //         var data = d.filter(function(d) {
+  //           return d.outbound == 1;
+  //         });
+  //         return data;
+  //     }else {
+  //         var data = d.filter(function(d) {
+  //           return d.outbound == 0;
+  //         });
+  //     }
+  // }
+
+  // var data = whichDirection();
+  // console.log(data);
+  // console.log(inbound);
+
+  function mapPointX(d) {
+    d.LatLng = new L.LatLng(d.latitude, d.longitude);
+    var x = map.latLngToLayerPoint(d.LatLng).x;
+    return x;
   }
 
-  var toLine = d3.svg
-    .line()
-    .interpolate("linear")
-    .x(function(d) {
-      return applyLatLngToLayer(d).x;
-    })
-    .y(function(d) {
-      return applyLatLngToLayer(d).y;
-    });
-
-  function applyLatLngToLayer(d) {
-    var y = d.geometry.coordinates[1];
-    var x = d.geometry.coordinates[0];
-    return map.latLngToLayerPoint(new L.LatLng(y, x));
+  function mapPointY(d) {
+    d.LatLng = new L.LatLng(d.latitude, d.longitude);
+    var y = map.latLngToLayerPoint(d.LatLng).y;
+    return y;
   }
 
   
-  // here is the line between points
-  var linePath = g
-    .selectAll(".lineConnect")
-    .data([featuresdata])
-    .enter()
-    .append("path")
-    .attr("class", "lineConnect");
 
-  // bus stop points
-  var ptFeatures = g
+  
+      
+      
+  function updateStops() {
+    data = d; 
+
+    if (d3.select("#direction").property("checked")) {
+     
+      data = data.filter(function(d) {
+        return d.outbound === 1;
+      });
+      //console.log(data);
+    } else {
+      data = data.filter(function(d) {
+        return d.outbound == 0;
+      });
+      //console.log(data);
+    }
+    
+
+    if(!d3.select("#route1").property("checked")) {
+      //console.log(d3.select("#route1").property("checked"));
+      data = data.filter(function(d) {
+        return d.route !=1;
+      })
+      //console.log(data);
+    }
+    else {
+      console.log(d3.select("#route1").property("checked"));
+      data = data; 
+      //console.log(data);
+      
+    }
+
+    if(!d3.select("#route43").property("checked")) {
+      //console.log(d3.select("#route43").property("checked"));
+      data = data.filter(function(d) {
+        return d.route !=43;
+      })
+      //console.log(data);
+    }
+    else {
+      console.log(d3.select("#route43").property("checked"));
+      data = data; 
+      //console.log(data);
+      
+    }
+    if(!d3.select("#routesl4").property("checked")) {
+      console.log(d3.select("#routesl4").property("checked"));
+      data = data.filter(function(d) {
+        return d.route !="sl4";
+      })
+      //console.log(data);
+    }
+    else {
+      //console.log(d3.select("#routesl4").property("checked"));
+      data = data; 
+      //console.log(data);
+      
+    }
+    if(!d3.select("#routesl5").property("checked")) {
+      //console.log(d3.select("#routesl5").property("checked"));
+      data = data.filter(function(d) {
+        return d.route !="sl5";
+      })
+      //console.log(data);
+    }
+    else {
+      //console.log(d3.select("#routesl5").property("checked"));
+      data = data; 
+      //console.log(data);
+      
+    }
+
+    
+
+    svg.selectAll("circle").remove();
+    stops = svg
+      .selectAll("circle")
+      .data(data, function(d) {
+        return d;
+      })
+      .enter()
+      .append("circle")
+      .attr("id", d => d.stopid)
+
+      .attr("r", 5)
+      .attr("cx", mapPointX)
+      .attr("cy", mapPointY)
+      .attr("fill", function(d) {
+        if(d.route == 1) {
+          return "#cc79a1";
+        }else if(d.route == 43) {
+          return "#a24700"
+        }else if(d.route == "sl4") {
+          return "#0072b2"
+        } else if (d.route == "sl5") {
+          return "#009e73"
+        }
+      })
+      .attr("stroke", "black")
+      .on('mouseover', function () {
+        d3.select(this).classed("mouseover", true)
+      
+        
+      })
+      .on('mouseout', function (d) {
+        d3.select(this).classed("mouseover", false)
+      })
+      .raise();
+
+  }
+      
+  
+  //console.log(d3.select("#route1").property("checked"));
+    
+  d3.select("#route1").on("change", updateStops);
+  d3.select("#route43").on("change", updateStops);
+  d3.select("#routesl4").on("change", updateStops);
+  d3.select("#routesl5").on("change", updateStops);
+  d3.select("#direction").on("change", updateStops);
+  d3.selectAll(".reveal-btn").on("click", updateStops);
+  updateStops();
+
+  
+
+  //   var line = d3
+  //     .line()
+  //     .x(function(d) {
+  //       return mapPointX(d);
+  //     })
+  //     .y(function(d) {
+  //       return mapPointY(d);
+  //     })
+  //     .curve(d3.curveCardinal.tension(0.5));
+
+  //   svg
+  //     .append("path")
+  //     .data([outbound])
+  //     .attr("d", line)
+  //     .attr("class", "lineConnect");
+
+  data = d.filter(function(d) {
+    return d.outbound == 1;
+  });
+
+  var stops = svg
     .selectAll("circle")
-    .data(featuresdata)
+    .data(data, function(d) {
+      return d;
+    })
     .enter()
     .append("circle")
+    .attr("id", d => d.stopid)
+
     .attr("r", 5)
-    .attr("fill", function(featuresdata) {
-      return featuresdata.properties.color;
+    .attr("cx", mapPointX)
+    .attr("cy", mapPointY)
+    .attr("fill", function(d) {
+      if(d.route == 1) {
+        return "#cc79a1";
+      }else if(d.route == 43) {
+        return "#a24700"
+      }else if(d.route == "sl4") {
+        return "#0072b2"
+      } else if (d.route == "sl5") {
+        return "#009e73"
+      }
     })
-    .attr("stroke", "black");
+    .attr("stroke", "black")
+    .on('mouseover', function () {
+      d3.select(this).classed("mouseover", true)
     
+      
+    })
+    .on('mouseout', function (d) {
+      d3.select(this).classed("mouseover", false)
+    })
+    .raise();
 
-  map.on("viewreset", reset);
-
-  // this puts stuff on the map!
-  reset();
-
-  function reset() {
-    var bounds = d3path.bounds(collection),
-        topLeft = bounds[0],
-        bottomRight = bounds[1];
-    
-    
-    // for the points we need to convert from latlong
-    // to map units
-    
-    ptFeatures.attr("transform",
-        function(d) {
-            return "translate(" +
-                applyLatLngToLayer(d).x + "," +
-                applyLatLngToLayer(d).y + ")";
-        });
-    
-    
-    // Setting the size and location of the overall SVG container
-    svg.attr("width", bottomRight[0] - topLeft[0] + 120)
-        .attr("height", bottomRight[1] - topLeft[1] + 120)
-        .style("left", topLeft[0] - 50 + "px")
-        .style("top", topLeft[1] - 50 + "px");
-    // linePath.attr("d", d3path);
-    linePath.attr("d", toLine)
-    // ptPath.attr("d", d3path);
-    g.attr("transform", "translate(" + (-topLeft[0] + 50) + "," + (-topLeft[1] + 50) + ")");
-} 
-
-});
-
+}
 
 
