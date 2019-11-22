@@ -23,6 +23,10 @@ d3.json("stopskey.json").then(function(collection) {
   route43();
   routesl4();
   routesl5();
+  route1freq();
+  route43freq();
+  routesl4freq();
+  routesl5freq();
 
 });
 
