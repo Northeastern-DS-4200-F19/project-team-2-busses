@@ -97,23 +97,26 @@
 
       <p>
         <em
-          >The Chester Square Neighborhood Association is set on providing its residents with the 
-        best living enviroment and community possible. Located on Massachusetts Avenue, the community 
-        and its park are split by one of the busiest roadways in Boston. The park is a gorgeous greenspace
-        for the paeople of Boston, primarily those in the greater Chester Square area. Luckily for residents,
-        there are 4 major busses which trek through the area: silver lines 4 and 5 and bus route 1 and 43. 
-        It goes without saying that many Bostonians have come to expect delays taking the MBTA. With this 
-        in mind and new capital projects in the cities pipeline, such as the Boston Rapid Transit (BRT), we aim to examine the 
-        reliability of the 4 busses which allow the citizens of Boston to venture to this park.</em
+          >The Chester Square Neighborhood Association is set on providing its residents with the best 
+		  living environment and community possible. Located on Massachusetts Avenue, the community and 
+		  its park are split by one of the busiest roadways in Boston. The park is a gorgeous green-space 
+		  for the people of Boston, primarily those in the greater Chester Square area. Luckily for 
+		  residents, there are four major buses that trek through the area: silver lines 4 and 5 and bus 
+		  routes 1 and 43. It goes without saying that many Bostonians have come to expect delays taking 
+		  the MBTA. With this in mind, and new capital projects in the city’s pipeline, such as the Boston 
+		  Bus Rapid Transit (BRT), we aim to examine the reliability of the four buses which allow the 
+		  citizens of Boston to venture to and from this park..</em
         >
       </p>
 
       <p>
         <em
-          >Our team anticipates to see that the busses running through this park (Silver Line 4,
-          Silver Line 5, Route 1, and Route 43) expereiences many delays, especially during rush hour. We
-        hope to be wrong in this assumption, but if it is true, we expect to have a good justification
-        for the Boston Rapid Transit (BRT). </em
+          >Our team anticipates finding that the buses running through this park (Silver Line 4, Silver 
+		  Line 5, Route 1, and Route 43) experience many delays, especially during rush hour. We hope to 
+		  be wrong in this assumption, but if it is true, we expect to have a good justification for the 
+		  Boston Bus Rapid Transit (BRT). Using the scheduled and predicted times of bus departure 
+		  obtained from the MBTA V3 API, we can gain an understanding of the magnitude of the delay and 
+		  reliability problem.</em
         >
       </p>
 
@@ -248,36 +251,53 @@
       </p>
 
       <h1>Data Analysis</h1>
-      <p><em>Summary of data, data types, and data preprocessing.</em></p>
-
       <p>
         <em
-          >All of our data is from the V3 API provided by the MBTA. We utilized 4 main datasets: Predictons,
-		  Schedules, Trips, and Stops, all of which come as JSONS. Depending on the visualization and its needs,
-		  we decided to convert any necessary date to CSV files for ease. This also made the data manipulation
-		  process much easier as we could do much of it in Excel. Converting to a CSV file was made easy by the 
-          multitude of online JSON/CSV converter tools. Each of the sheets has an ID associated for each instance. Each 
-		  schedule is unique to each route. The schedule has a list of each stop along the way as well as its arrival/departure
-		  time. Each trip follows a schedule and has the actual arrival/departure times. Finally, the preditoons follow each trip 
-		  with its own list of arrival and departure times per stop.</em
+          >Our data was pulled from the V3 API owned and operated by the MBTA. This data source has many 
+		  offered datasets, but for our assignment, we utilized the Stops, Schedules, Predictions, and 
+		  Trips datasets. All of these datasets were collected as JSONs, however, the JSONs were 
+		  inconsistent in structure from one another and overall messy in form. Because of this, our 
+		  first task was to develop a JSON parsing tool in order to extract the data values we needed 
+		  for the project. For Stops, we collected the name (string), latitude (float), longitude (float), 
+		  stop_id (string). For trips, we extracted trip_id (int) and route_id (int). From the Schedules 
+		  dataset, we grabbed the departure_time (string), direction_id (int), stop_sequence (int), 
+		  schedule_id (string), route_id (int), stop_id (string), and trip_id (int). From the Predictions 
+		  dataset, we extracted the departure_time (string), direction_id (int), stop_sequence (int), 
+		  schedule_id (string), route_id (int), stop_id (string), vehicle_id (string), and trip_id (int). 
+		  When buses were at the last stop on their trip, they had no departure time. In these situations, 
+		  we imputed the null cases with the arrival times. Also, the direction_id was a boolean value 
+		  with 1 representing inbound trips and 0 representing outbound trips. All of the time series 
+		  data was stored in an unfamiliar format (Ex: “2019-11-15T22:21:06-05:00” which lists the date, 
+		  time, and timezone), so we used Excel to break down these data points into more useful hh:mm:ss 
+		  data types. In doing so, we could simply subtract the scheduled time from the predicted time to 
+		  generate the time difference between the two values. Our data was pulled from one day (Friday, 
+		  November 15th, 2019) due to the fact that prediction data is only stored for approximately the 
+		  next hour and a half requiring us to complete manual pulls in these intervals. Additionally, 
+		  past prediction data is not stored, and thus, could not be pulled from the API. We took the 
+		  day’s worth of data and aggregated it in order to generate the average delay and frequency of 
+		  delay data points, which we stored alongside the Stops dataset. Our data used in the 
+		  visualization was a mix of JSON and CSV files due to the processing power of JSONs and the ease 
+		  of use of CSV files for end-users. </em
         >
       </p>
 
       <h1>Task Analysis</h1>
 
-      <p><em>Summary of task table.</em></p>
-
       <p>
         <em
-          >Overall, we aimed to address three major tasks through our project. 
-          First, worked to provide a way for Chester Square Neighborhood residents and 
-          other Bostonians alike to gain a sense of the busses which could be taken too and from
-          the park. This includes, but  is not limited to, finding bus stops near them, finding
-          the lines near them, and undertanding what times of day expereicne the most delays. 
-          Second, we wanted to analyze the delays of busses over an extended period
-          of time in order for commuters to gain a better understanding of the trends in interuptions
-          in their travel. Third, our team strived to show the difference between the
-          scheduled location and the physical locations of the busses through the various visualizations. <em
+          >Our project aimed to tackle three main tasks. The first task was to have a mechanism for users 
+		  to find relevant bus routes for them to navigate to and from the Chester Square Park. We 
+		  achieved this in our map visualization, checkboxes, and tooltips which allow users to identify 
+		  and locate the stop closest to their home. Secondly, we wanted users to understand the 
+		  reliability of the stops/routes they personally interact with. This was done via our bar 
+		  charts which are organized by route allowing users to focus on the delay data which directly 
+		  affects their travel by comparing the predicted values and the scheduled values for the departure 
+		  times at each stop. Finally, we wanted to give insight into the overall reliability status of the 
+		  buses which affect the visitors of Chester Square Park by building bar charts detailing the 
+		  frequency of delays and the severity of said delays for each of the bus stops. These insights 
+		  can be used when advocating for future capital projects which aim to ameliorate the delay issues, 
+		  such as the Boston BRT. All of these tasks are enhanced via our brushing and linking functionalities 
+		  which enable users to subset and highlight the data they want/need to see. <em
     
         >
       </p>
@@ -285,18 +305,19 @@
       <h1>Design Process</h1>
 
       <p>
-        <em>Sketches and design choices to justify final visualization.</em>
-      </p>
-
-      <p>
         <em
-          >In the beginning, we wanted to visualize three maps: one for the actual location of busses, one for the
-		  shedueled location of busses, and one for the predicted location of busses. This became an issue for viewers since
-		  they would have to track where each bus is along its ride and really did not provide a lot of analysis into the true
-		  subject matter of our project; how do the different bus routes perform in terms of reliabilty? Also, we ran into an issue
-		  with the data. We wanted to use logged data on a weekly basis, however, the data for MBTA predicitons frefreshes daily and reutilizes
-		  IDs. Because of this, we went for a more static dataset. We also considered including all of the bars within the same bar chart, but because of 
-		  possible occlusion, we decided to opt for multiple bar charts. </em
+          >In the beginning, we wanted to visualize three maps: one for the actual location of buses, one for 
+		  the scheduled location of buses, and one for the predicted location of buses. This became an issue 
+		  for viewers since they would have to track where each bus is along its ride and really did not provide 
+		  a lot of analysis into the true subject matter of our project; how do the different bus routes perform 
+		  in terms of reliability? Also, we ran into an issue with the data. We wanted to use logged data on a 
+		  weekly basis, however, the data for MBTA predictions refreshes approximately every 90 minutes for 
+		  prediction values. Because of this, we went for a more static dataset. We also considered including 
+		  all of the bars within the same bar chart, but because of possible occlusion, we decided to opt for 
+		  multiple bar charts. During the design process, we wanted to include brushing and linking over a 
+		  zoomable map. Since brushing and linking requires the mouse events, we decided to opt for a static map 
+		  because we felt it was more important for users to have brushing and linking functionality rather than 
+		  zooming capabilities on the map. </em
         >
       </p>
 
@@ -304,21 +325,26 @@
 
       <p>
         <em
-          >We were able to visualize the data for the MBTA busses which residents traveling to and from the Chester Square Parl area 
-		  interact with. The biggest bit of information that we were able to find was that the busses do, in fact, seem to be onlyl partially reliable. 
-		  Of course, there are issues that arrive everyday with transit, but regardless, there could be a case for increased development in this area. Because
-		  of this, we do see a real case for the BRT as it may increase reliability in travel, especcially for those coming from a far location. We faced
-		  many difficulties in this project including a complex API and a new library (D3), but we were able to combine our wide variety of skills to ultimately
-		  create an interactive project.<em
+          >Overall, we were able to see that the buses of Chester Square Park are not nearly as reliable as they 
+		  could be. For example, the Route 43 bus was late 81% of the time when heading inbound or outbound from 
+		  the Tremont S/ Ruggles St stop. Even though the delays were minimal, typically only a couple minutes, 
+		  there were many instances where riders experienced delays of over ten minutes. Of course, there are 
+		  issues that arrive every day with transit, but regardless, there could be a case for increased development 
+		  in this area. Because of this, we do see a real case for the BRT as it may increase reliability in travel, 
+		  especially for those coming from a location that’s far away. We faced many difficulties in this project 
+		  including a complex API and a new library (D3), but we were able to combine our wide variety of skills 
+		  to ultimately create an interactive project.<em
         >
       </p>
 
       <p>
         <em
-          > We would love to expand this project to all of the MBTA eventually as we feel the discussion about the discrepencies between 
-		  the scheduled, predicted, and actual arrival/departure times is one which all riders, regardless of route, could benefit from. We ultimately
-		  would like to build a tool for a wider audience so that all areas fo the city could have a use case for confronting the city of Boston with 
-		  their own transit-related issues. </em
+          >We would love to expand this project to all of the MBTA eventually as we feel the discussion about the 
+		  discrepancies between the scheduled and predicted times is one which all riders, regardless of route, 
+		  could benefit from. We ultimately would like to build a tool for a wider audience so that all areas of 
+		  the city could have a use case for confronting the city of Boston with their own transit-related issues. 
+		  Additionally, we could build more tools pertaining to the Chester Square buses, such as schedule 
+		  visualizations, so that riders could have an aid in visualizing the patterns of the time series data.  </em
         >
       </p>
 
