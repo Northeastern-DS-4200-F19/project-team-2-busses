@@ -1,7 +1,7 @@
 function route1() {
   var margin = { top: 50, right: 50, bottom: 170, left: 100 };
-  var width = 600 - margin.left - margin.right;
-  var height = 600 - margin.top - margin.bottom;
+  var width = 400 - margin.left - margin.right;
+  var height = 400 - margin.top - margin.bottom;
 
   //create the svg
   var svg = d3
@@ -24,7 +24,7 @@ function route1() {
       return d.route == 1;
     });
 
-    d3.select("#direction").on("change", update1);
+    //d3.select("#direction").on("change", update1);
     update1();
     function update1() {
       console.log(d3.select("#direction").property("checked"));
@@ -161,8 +161,8 @@ function route1() {
 
 function route43() {
   var margin = { top: 50, right: 50, bottom: 170, left: 80 };
-  var width = 600 - margin.left - margin.right;
-  var height = 600 - margin.top - margin.bottom;
+  var width = 400 - margin.left - margin.right;
+  var height = 400 - margin.top - margin.bottom;
 
   //create the svg
   var svg = d3
@@ -320,8 +320,8 @@ function route43() {
 
 function routesl4() {
   var margin = { top: 50, right: 50, bottom: 170, left: 80 };
-  var width = 600 - margin.left - margin.right;
-  var height = 600 - margin.top - margin.bottom;
+  var width = 400 - margin.left - margin.right;
+  var height = 400 - margin.top - margin.bottom;
 
   //create the svg
   var svg = d3
@@ -342,7 +342,7 @@ function routesl4() {
     data = data.filter(function(d) {
       return d.route == "sl4";
     });
-    d3.select("#direction").on("change", updatesl4);
+    //d3.select("#direction").on("change", updatesl4);
     updatesl4();
     function updatesl4() {
       console.log(d3.select("#direction").property("checked"));
@@ -479,8 +479,8 @@ function routesl4() {
 
 function routesl5() {
   var margin = { top: 50, right: 50, bottom: 170, left: 80 };
-  var width = 600 - margin.left - margin.right;
-  var height = 600 - margin.top - margin.bottom;
+  var width = 400 - margin.left - margin.right;
+  var height = 400 - margin.top - margin.bottom;
 
   //create the svg
   var svg = d3
@@ -501,7 +501,7 @@ function routesl5() {
     data = data.filter(function(d) {
       return d.route == "sl5";
     });
-    d3.select("#direction").on("change", updatesl5);
+    //d3.select("#direction").on("change", updatesl5);
     //.on("change", updateStops);
     updatesl5();
     function updatesl5() {

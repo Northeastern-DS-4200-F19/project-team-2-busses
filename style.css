@@ -45,9 +45,9 @@ h3 {
 } */
 
 #map {
-  width: 700px;
+  width: 500px;
   height: 500px;
-  margin: 25px;
+  
 }
 
 #scrubbar {
@@ -110,6 +110,29 @@ h3 {
 #scrubbar {
   /* width of the contianer*/
   width: 625px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: start;
+}
+
+
+#wrapper {
+  width: 1500px;
+}
+
+#content {
+  float: right;
+  background: #FFFFFF;
+  width: 500px;
+}
+
+#leftcolumn {
+  width: 550px;
+  float: left;
+  position: sticky;
 }
 
 .slider {

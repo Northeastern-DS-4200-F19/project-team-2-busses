@@ -130,8 +130,75 @@
     <br />
 
     
-    <div id="map"></div>
+   
 
+    
+     
+    <div id="wrapper">
+        <div id="leftcolumn">
+            <div id="map"></div>
+            <div id="buttons">
+                <input
+                type="checkbox"
+                id="direction"
+                class="filter"
+                checked
+              />
+              Outbound <input type="checkbox" id="route1" name="filter-btn" checked /> Route 1
+              <input
+                type="checkbox"
+                id="route43"
+                class="filter"
+                name="filter-btn"
+                checked
+              />
+              Route 43
+              <input
+                type="checkbox"
+                id="routesl4"
+                class="filter"
+                name="filter-btn"
+                checked
+              />
+              Route SL4
+              <input
+                type="checkbox"
+                id="routesl5"
+                class="filter"
+                name="filter-btn"
+                checked
+              />
+              Route SL5
+              <button class="reveal-btn" onclick="selectAll()">Check All</button>
+              <button class="reveal-btn" onclick="UnSelectAll()">Check None</button>
+              
+                 
+            </div>
+        </div>
+        <div id="content">
+            <div class="grid-container">
+                <div class="grid-item" id="route1bar"></div>
+                <div class="grid-item" id="route43bar"></div>
+                <div class="grid-item" id="routesl4bar"></div>
+                <div class="grid-item" id="routesl5bar"></div>
+                <div id="route1freq" class="vis"></div>
+                <div id="route43freq" class="vis"></div>
+                <div id="routesl4freq" class="vis"></div>
+                <div id="routesl5freq" class="vis"></div>
+            </div>
+       </div>
+    </div>
+    
+        
+     
+      
+   
+        <!-- <div id="route1bar" class="vis"></div>
+        <div id="route43bar" class="vis"></div>
+        <div id="routesl4bar" class="vis"></div>
+        <div id="routesl5bar" class="vis"></div> -->
+     
+    
     
       <!-- <div id="scrubbar">
         <input
@@ -144,56 +211,16 @@
         />
       </div> -->
     
-      <input
-      type="checkbox"
-      id="direction"
-      class="filter"
-      checked
-    />
-    Outbound <input type="checkbox" id="route1" name="filter-btn" checked /> Route 1
-    <input
-      type="checkbox"
-      id="route43"
-      class="filter"
-      name="filter-btn"
-      checked
-    />
-    Route 43
-    <input
-      type="checkbox"
-      id="routesl4"
-      class="filter"
-      name="filter-btn"
-      checked
-    />
-    Route SL4
-    <input
-      type="checkbox"
-      id="routesl5"
-      class="filter"
-      name="filter-btn"
-      checked
-    />
-    Route SL5
-    <button class="reveal-btn" onclick="selectAll()">Check All</button>
-    <button class="reveal-btn" onclick="UnSelectAll()">Check None</button>
-    
-        
+   
       
     <br />
     <!-- Your visualization here -->
     <div class="vis-holder">
-      <div id="route1bar" class="vis"></div>
-      <div id="route43bar" class="vis"></div>
-      <div id="routesl4bar" class="vis"></div>
-      <div id="routesl5bar" class="vis"></div>
+
     </div>
 
     <div class="vis-holder">
-      <div id="route1freq" class="vis"></div>
-      <div id="route43freq" class="vis"></div>
-      <div id="routesl4freq" class="vis"></div>
-      <div id="routesl5freq" class="vis"></div>
+ 
     </div>
 	
 	<!-- Parallel Coordinates Visualizations -->
