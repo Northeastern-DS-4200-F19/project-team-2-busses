@@ -397,3 +397,11 @@ svg {
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
   right: 0px; 
 }
+
+.burshedPoint{
+	fill: yellow;
+}
+
+.mouseover{
+	fill: yellow;
+}
