@@ -34,7 +34,7 @@ function map(d) {
   var Brush = d3.brush().extent([
     [0, 0],
     [width, height]
-  ])
+  ]);
   //.on("start brush", brushed)
   //.on("end", brushEnd);
 
@@ -77,16 +77,10 @@ function map(d) {
     return y;
   }
 
-  
-
-  
-      
-      
   function updateStops() {
-    data = d; 
+    data = d;
 
     if (d3.select("#direction").property("checked")) {
-     
       data = data.filter(function(d) {
         return d.outbound === 1;
       });
@@ -97,63 +91,52 @@ function map(d) {
       });
       //console.log(data);
     }
-    
 
-    if(!d3.select("#route1").property("checked")) {
+    if (!d3.select("#route1").property("checked")) {
       //console.log(d3.select("#route1").property("checked"));
       data = data.filter(function(d) {
-        return d.route !=1;
-      })
+        return d.route != 1;
+      });
       //console.log(data);
-    }
-    else {
+    } else {
       console.log(d3.select("#route1").property("checked"));
-      data = data; 
+      data = data;
       //console.log(data);
-      
     }
 
-    if(!d3.select("#route43").property("checked")) {
+    if (!d3.select("#route43").property("checked")) {
       //console.log(d3.select("#route43").property("checked"));
       data = data.filter(function(d) {
-        return d.route !=43;
-      })
+        return d.route != 43;
+      });
       //console.log(data);
-    }
-    else {
+    } else {
       console.log(d3.select("#route43").property("checked"));
-      data = data; 
+      data = data;
       //console.log(data);
-      
     }
-    if(!d3.select("#routesl4").property("checked")) {
+    if (!d3.select("#routesl4").property("checked")) {
       console.log(d3.select("#routesl4").property("checked"));
       data = data.filter(function(d) {
-        return d.route !="sl4";
-      })
+        return d.route != "sl4";
+      });
       //console.log(data);
-    }
-    else {
+    } else {
       //console.log(d3.select("#routesl4").property("checked"));
-      data = data; 
+      data = data;
       //console.log(data);
-      
     }
-    if(!d3.select("#routesl5").property("checked")) {
+    if (!d3.select("#routesl5").property("checked")) {
       //console.log(d3.select("#routesl5").property("checked"));
       data = data.filter(function(d) {
-        return d.route !="sl5";
-      })
+        return d.route != "sl5";
+      });
       //console.log(data);
-    }
-    else {
+    } else {
       //console.log(d3.select("#routesl5").property("checked"));
-      data = data; 
+      data = data;
       //console.log(data);
-      
     }
-
-    
 
     svg.selectAll("circle").remove();
     stops = svg
@@ -163,7 +146,7 @@ function map(d) {
       })
       .enter()
       .append("circle")
-      .attr("id", function(d){
+      .attr("id", function(d) {
         return "s" + d.stopid; //<-- Sets the ID of the point to the stops name
       })
 
@@ -171,58 +154,50 @@ function map(d) {
       .attr("cx", mapPointX)
       .attr("cy", mapPointY)
       .attr("fill", function(d) {
-        if(d.route == 1) {
+        if (d.route == 1) {
           return "#cc79a1";
-        }else if(d.route == 43) {
-          return "#a24700"
-        }else if(d.route == "sl4") {
-          return "#0072b2"
+        } else if (d.route == 43) {
+          return "#a24700";
+        } else if (d.route == "sl4") {
+          return "#0072b2";
         } else if (d.route == "sl5") {
-          return "#009e73"
+          return "#009e73";
         }
       })
       .attr("stroke", "black")
-      .on('mouseover', function () {
+      .on("mouseover", function() {
         return mapMouseOver(d);
-      
-        
       })
-      .on('mouseout', function (d) {
+      .on("mouseout", function(d) {
         return mapMouseOverEnd(d);
       })
       .raise();
 
-      function mapMouseOver(d) {
+    function mapMouseOver(d) {
+      d3.selectAll("#" + "s" + d.stopid)
+        .style("fill", "#ffff00")
+        .style("stroke", "#000000");
+    }
 
-        d3.selectAll(("#" + "s" + d.stopid))
-          .style("fill", "#ffff00")
-          .style("stroke", "#000000");
-      
-      };
-    
-    
-      function mapMouseOverEnd(d) {
-        d3.selectAll(("#" + "s" + d.stopid))
+    function mapMouseOverEnd(d) {
+      d3.selectAll("#" + "s" + d.stopid)
         .style("fill", function(d) {
-          if(d.route == 1) {
+          if (d.route == 1) {
             return "#cc79a1";
-          }else if(d.route == 43) {
-            return "#a24700"
-          }else if(d.route == "sl4") {
-            return "#0072b2"
+          } else if (d.route == 43) {
+            return "#a24700";
+          } else if (d.route == "sl4") {
+            return "#0072b2";
           } else if (d.route == "sl5") {
-            return "#009e73"
+            return "#009e73";
           }
         })
-          .style("stroke", "#000000");
-      }
-    
-
+        .style("stroke", "#000000");
+    }
   }
-      
-  
+
   //console.log(d3.select("#route1").property("checked"));
-    
+
   d3.select("#route1").on("change", updateStops);
   d3.select("#route43").on("change", updateStops);
   d3.select("#routesl4").on("change", updateStops);
@@ -230,8 +205,6 @@ function map(d) {
   d3.select("#direction").on("change", updateStops);
   d3.selectAll(".reveal-btn").on("click", updateStops);
   updateStops();
-
-  
 
   //   var line = d3
   //     .line()
@@ -260,7 +233,7 @@ function map(d) {
     })
     .enter()
     .append("circle")
-    .attr("id", function(d){
+    .attr("id", function(d) {
       return "s" + d.stopid; //<-- Sets the ID of the point to the stops name
     })
 
@@ -268,54 +241,47 @@ function map(d) {
     .attr("cx", mapPointX)
     .attr("cy", mapPointY)
     .attr("fill", function(d) {
-      if(d.route == 1) {
+      if (d.route == 1) {
         return "#cc79a1";
-      }else if(d.route == 43) {
-        return "#a24700"
-      }else if(d.route == "sl4") {
-        return "#0072b2"
+      } else if (d.route == 43) {
+        return "#a24700";
+      } else if (d.route == "sl4") {
+        return "#0072b2";
       } else if (d.route == "sl5") {
-        return "#009e73"
+        return "#009e73";
       }
     })
     .attr("stroke", "black")
-    .on('mouseover', function (d) {
+    .on("mouseover", function(d) {
       //d3.select(this).classed("mouseover", true)
       console.log(d);
       return mapMouseOver(d);
-    
-      
     })
-    .on('mouseout', function (d) {
+    .on("mouseout", function(d) {
       //d3.select(this).classed("mouseover", false)
       return mapMouseOverEnd(d);
     })
     .raise();
-
 }
 
-
 function mapMouseOver(d) {
+  d3.selectAll("#" + "s" + d.stopid)
+    .style("fill", "#ffff00")
+    .style("stroke", "#000000");
+}
 
-    d3.selectAll(("#" + "s" + d.stopid))
-      .style("fill", "#ffff00")
-      .style("stroke", "#000000");
-  
-  };
-
-
-  function mapMouseOverEnd(d) {
-    d3.selectAll(("#" + "s" + d.stopid))
+function mapMouseOverEnd(d) {
+  d3.selectAll("#" + "s" + d.stopid)
     .style("fill", function(d) {
-      if(d.route == 1) {
+      if (d.route == 1) {
         return "#cc79a1";
-      }else if(d.route == 43) {
-        return "#a24700"
-      }else if(d.route == "sl4") {
-        return "#0072b2"
+      } else if (d.route == 43) {
+        return "#a24700";
+      } else if (d.route == "sl4") {
+        return "#0072b2";
       } else if (d.route == "sl5") {
-        return "#009e73"
+        return "#009e73";
       }
     })
-      .style("stroke", "#000000");
-  }
+    .style("stroke", "#000000");
+}

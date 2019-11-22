@@ -106,7 +106,14 @@ function route1freq() {
             return "#009e73";
           }
         })
-        .attr("stroke", "#000000");
+        .attr("stroke", "#000000")
+        .attr("stroke", "#000000")
+        .on("mouseover", function(d) {
+          return barMouseOver(d);
+        })
+        .on("mouseout", function(d) {
+          return barMouseOverEnd(d);
+        });
     }
   });
 
@@ -262,7 +269,14 @@ function route43freq() {
             return "#009e73";
           }
         })
-        .attr("stroke", "#000000");
+        .attr("stroke", "#000000")
+        .attr("stroke", "#000000")
+        .on("mouseover", function(d) {
+          return barMouseOver(d);
+        })
+        .on("mouseout", function(d) {
+          return barMouseOverEnd(d);
+        });
     }
   });
 
@@ -284,6 +298,28 @@ function route43freq() {
     .attr("dy", "1em")
     .style("text-anchor", "middle")
     .text("Minutes");
+
+    function barMouseOver(d) {
+      d3.selectAll("#" + "s" + d.stopid)
+        .style("fill", "#ffff00")
+        .style("stroke", "#000000");
+    }
+  
+    function barMouseOverEnd(d) {
+      d3.selectAll("#" + "s" + d.stopid)
+        .style("fill", function(d) {
+          if (d.route == 1) {
+            return "#cc79a1";
+          } else if (d.route == 43) {
+            return "#a24700";
+          } else if (d.route == "sl4") {
+            return "#0072b2";
+          } else if (d.route == "sl5") {
+            return "#009e73";
+          }
+        })
+        .style("stroke", "#000000");
+    }
 }
 
 function routesl4freq() {
@@ -392,7 +428,14 @@ function routesl4freq() {
             return "#009e73";
           }
         })
-        .attr("stroke", "#000000");
+        .attr("stroke", "#000000")
+        .attr("stroke", "#000000")
+        .on("mouseover", function(d) {
+          return barMouseOver(d);
+        })
+        .on("mouseout", function(d) {
+          return barMouseOverEnd(d);
+        });
     }
   });
 
@@ -414,6 +457,28 @@ function routesl4freq() {
     .attr("dy", "1em")
     .style("text-anchor", "middle")
     .text("Minutes");
+
+    function barMouseOver(d) {
+      d3.selectAll("#" + "s" + d.stopid)
+        .style("fill", "#ffff00")
+        .style("stroke", "#000000");
+    }
+  
+    function barMouseOverEnd(d) {
+      d3.selectAll("#" + "s" + d.stopid)
+        .style("fill", function(d) {
+          if (d.route == 1) {
+            return "#cc79a1";
+          } else if (d.route == 43) {
+            return "#a24700";
+          } else if (d.route == "sl4") {
+            return "#0072b2";
+          } else if (d.route == "sl5") {
+            return "#009e73";
+          }
+        })
+        .style("stroke", "#000000");
+    }
 }
 
 function routesl5freq() {
@@ -524,7 +589,14 @@ function routesl5freq() {
             return "#009e73";
           }
         })
-        .attr("stroke", "#000000");
+        .attr("stroke", "#000000")
+        .attr("stroke", "#000000")
+        .on("mouseover", function(d) {
+          return barMouseOver(d);
+        })
+        .on("mouseout", function(d) {
+          return barMouseOverEnd(d);
+        });
     }
   });
 
@@ -546,4 +618,26 @@ function routesl5freq() {
     .attr("dy", "1em")
     .style("text-anchor", "middle")
     .text("Minutes");
+
+    function barMouseOver(d) {
+      d3.selectAll("#" + "s" + d.stopid)
+        .style("fill", "#ffff00")
+        .style("stroke", "#000000");
+    }
+  
+    function barMouseOverEnd(d) {
+      d3.selectAll("#" + "s" + d.stopid)
+        .style("fill", function(d) {
+          if (d.route == 1) {
+            return "#cc79a1";
+          } else if (d.route == 43) {
+            return "#a24700";
+          } else if (d.route == "sl4") {
+            return "#0072b2";
+          } else if (d.route == "sl5") {
+            return "#009e73";
+          }
+        })
+        .style("stroke", "#000000");
+    }
 }

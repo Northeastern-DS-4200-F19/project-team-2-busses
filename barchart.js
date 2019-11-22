@@ -46,7 +46,7 @@ function route1() {
       svg.selectAll(".axis").remove();
       //format the data
       dat.forEach(function(d) {
-        d.avFreqDelay = +d.avFreqDelay;
+        d.avMinDelay = +d.avMinDelay;
       });
 
       x.domain(
@@ -57,7 +57,7 @@ function route1() {
       y.domain([
         0,
         d3.max(dat, function(d) {
-          return d.avFreqDelay;
+          return d.avMinDelay;
         })
       ]);
 
@@ -82,18 +82,18 @@ function route1() {
         .enter()
         .append("rect")
         .attr("class", "bar")
-        .attr("id", function(d){
+        .attr("id", function(d) {
           return "s" + d.stopid; //<-- Sets the ID of the point to the stops name
-        })    
+        })
         .attr("x", function(d) {
           return x(d.name);
         })
         .attr("width", x.bandwidth())
         .attr("y", function(d) {
-          return y(d.avFreqDelay);
+          return y(d.avMinDelay);
         })
         .attr("height", function(d) {
-          return height - y(d.avFreqDelay);
+          return height - y(d.avMinDelay);
         })
         .attr("fill", function(d) {
           if (d.route == 1) {
@@ -106,7 +106,13 @@ function route1() {
             return "#009e73";
           }
         })
-        .attr("stroke", "#000000");
+        .attr("stroke", "#000000")
+        .on("mouseover", function(d) {
+          return barMouseOver(d);
+        })
+        .on("mouseout", function(d) {
+          return barMouseOverEnd(d);
+        });
     }
   });
 
@@ -129,30 +135,27 @@ function route1() {
     .style("text-anchor", "middle")
     .text("Minutes");
 
-    function barMouseOver(d) {
+  function barMouseOver(d) {
+    d3.selectAll("#" + "s" + d.stopid)
+      .style("fill", "#ffff00")
+      .style("stroke", "#000000");
+  }
 
-        d3.selectAll(("#" + "s" + d.stopid))
-          .style("fill", "#ffff00")
-          .style("stroke", "#000000");
-      
-      };
-    
-    
-      function barMouseOverEnd(d) {
-        d3.selectAll(("#" + "s" + d.stopid))
-        .style("fill", function(d) {
-          if (d.route == 1) {
-            return "#cc79a1";
-          } else if (d.route == 43) {
-            return "#a24700";
-          } else if (d.route == "sl4") {
-            return "#0072b2";
-          } else if (d.route == "sl5") {
-            return "#009e73";
-          }
-        })
-        .style("stroke", "#000000");
-      }
+  function barMouseOverEnd(d) {
+    d3.selectAll("#" + "s" + d.stopid)
+      .style("fill", function(d) {
+        if (d.route == 1) {
+          return "#cc79a1";
+        } else if (d.route == 43) {
+          return "#a24700";
+        } else if (d.route == "sl4") {
+          return "#0072b2";
+        } else if (d.route == "sl5") {
+          return "#009e73";
+        }
+      })
+      .style("stroke", "#000000");
+  }
 }
 //route1();
 
@@ -202,7 +205,7 @@ function route43() {
       svg.selectAll(".axis").remove();
       //format the data
       dat.forEach(function(d) {
-        d.avFreqDelay = +d.avFreqDelay;
+        d.avMinDelay = +d.avMinDelay;
       });
 
       x.domain(
@@ -213,7 +216,7 @@ function route43() {
       y.domain([
         0,
         d3.max(dat, function(d) {
-          return d.avFreqDelay;
+          return d.avMinDelay;
         })
       ]);
 
@@ -238,18 +241,18 @@ function route43() {
         .enter()
         .append("rect")
         .attr("class", "bar")
-        .attr("id", function(d){
+        .attr("id", function(d) {
           return "s" + d.stopid; //<-- Sets the ID of the point to the stops name
-        })   
+        })
         .attr("x", function(d) {
           return x(d.name);
         })
         .attr("width", x.bandwidth())
         .attr("y", function(d) {
-          return y(d.avFreqDelay);
+          return y(d.avMinDelay);
         })
         .attr("height", function(d) {
-          return height - y(d.avFreqDelay);
+          return height - y(d.avMinDelay);
         })
         .attr("fill", function(d) {
           if (d.route == 1) {
@@ -262,7 +265,14 @@ function route43() {
             return "#009e73";
           }
         })
-        .attr("stroke", "#000000");
+        .attr("stroke", "#000000")
+        .attr("stroke", "#000000")
+        .on("mouseover", function(d) {
+          return barMouseOver(d);
+        })
+        .on("mouseout", function(d) {
+          return barMouseOverEnd(d);
+        });
     }
   });
 
@@ -284,6 +294,28 @@ function route43() {
     .attr("dy", "1em")
     .style("text-anchor", "middle")
     .text("Minutes");
+
+  function barMouseOver(d) {
+    d3.selectAll("#" + "s" + d.stopid)
+      .style("fill", "#ffff00")
+      .style("stroke", "#000000");
+  }
+
+  function barMouseOverEnd(d) {
+    d3.selectAll("#" + "s" + d.stopid)
+      .style("fill", function(d) {
+        if (d.route == 1) {
+          return "#cc79a1";
+        } else if (d.route == 43) {
+          return "#a24700";
+        } else if (d.route == "sl4") {
+          return "#0072b2";
+        } else if (d.route == "sl5") {
+          return "#009e73";
+        }
+      })
+      .style("stroke", "#000000");
+  }
 }
 
 function routesl4() {
@@ -332,7 +364,7 @@ function routesl4() {
       svg.selectAll(".axis").remove();
       //format the data
       dat.forEach(function(d) {
-        d.avFreqDelay = +d.avFreqDelay;
+        d.avMinDelay = +d.avMinDelay;
       });
 
       x.domain(
@@ -343,7 +375,7 @@ function routesl4() {
       y.domain([
         0,
         d3.max(dat, function(d) {
-          return d.avFreqDelay;
+          return d.avMinDelay;
         })
       ]);
 
@@ -368,18 +400,18 @@ function routesl4() {
         .enter()
         .append("rect")
         .attr("class", "bar")
-        .attr("id", function(d){
+        .attr("id", function(d) {
           return "s" + d.stopid; //<-- Sets the ID of the point to the stops name
-        })   
+        })
         .attr("x", function(d) {
           return x(d.name);
         })
         .attr("width", x.bandwidth())
         .attr("y", function(d) {
-          return y(d.avFreqDelay);
+          return y(d.avMinDelay);
         })
         .attr("height", function(d) {
-          return height - y(d.avFreqDelay);
+          return height - y(d.avMinDelay);
         })
         .attr("fill", function(d) {
           if (d.route == 1) {
@@ -392,7 +424,14 @@ function routesl4() {
             return "#009e73";
           }
         })
-        .attr("stroke", "#000000");
+        .attr("stroke", "#000000")
+        .attr("stroke", "#000000")
+        .on("mouseover", function(d) {
+          return barMouseOver(d);
+        })
+        .on("mouseout", function(d) {
+          return barMouseOverEnd(d);
+        });
     }
   });
 
@@ -414,6 +453,28 @@ function routesl4() {
     .attr("dy", "1em")
     .style("text-anchor", "middle")
     .text("Minutes");
+
+  function barMouseOver(d) {
+    d3.selectAll("#" + "s" + d.stopid)
+      .style("fill", "#ffff00")
+      .style("stroke", "#000000");
+  }
+
+  function barMouseOverEnd(d) {
+    d3.selectAll("#" + "s" + d.stopid)
+      .style("fill", function(d) {
+        if (d.route == 1) {
+          return "#cc79a1";
+        } else if (d.route == 43) {
+          return "#a24700";
+        } else if (d.route == "sl4") {
+          return "#0072b2";
+        } else if (d.route == "sl5") {
+          return "#009e73";
+        }
+      })
+      .style("stroke", "#000000");
+  }
 }
 
 function routesl5() {
@@ -440,9 +501,8 @@ function routesl5() {
     data = data.filter(function(d) {
       return d.route == "sl5";
     });
-    d3.select("#direction")
-      .on("change", updatesl5)
-      //.on("change", updateStops);
+    d3.select("#direction").on("change", updatesl5);
+    //.on("change", updateStops);
     updatesl5();
     function updatesl5() {
       console.log(d3.select("#direction").property("checked"));
@@ -464,7 +524,7 @@ function routesl5() {
       svg.selectAll(".axis").remove();
       //format the data
       dat.forEach(function(d) {
-        d.avFreqDelay = +d.avFreqDelay;
+        d.avMinDelay = +d.avMinDelay;
       });
 
       x.domain(
@@ -475,7 +535,7 @@ function routesl5() {
       y.domain([
         0,
         d3.max(dat, function(d) {
-          return d.avFreqDelay;
+          return d.avMinDelay;
         })
       ]);
 
@@ -500,18 +560,18 @@ function routesl5() {
         .enter()
         .append("rect")
         .attr("class", "bar")
-        .attr("id", function(d){
+        .attr("id", function(d) {
           return "s" + d.stopid; //<-- Sets the ID of the point to the stops name
-        })   
+        })
         .attr("x", function(d) {
           return x(d.name);
         })
         .attr("width", x.bandwidth())
         .attr("y", function(d) {
-          return y(d.avFreqDelay);
+          return y(d.avMinDelay);
         })
         .attr("height", function(d) {
-          return height - y(d.avFreqDelay);
+          return height - y(d.avMinDelay);
         })
         .attr("fill", function(d) {
           if (d.route == 1) {
@@ -524,7 +584,14 @@ function routesl5() {
             return "#009e73";
           }
         })
-        .attr("stroke", "#000000");
+        .attr("stroke", "#000000")
+        .attr("stroke", "#000000")
+        .on("mouseover", function(d) {
+          return barMouseOver(d);
+        })
+        .on("mouseout", function(d) {
+          return barMouseOverEnd(d);
+        });
     }
   });
 
@@ -546,4 +613,26 @@ function routesl5() {
     .attr("dy", "1em")
     .style("text-anchor", "middle")
     .text("Minutes");
+
+  function barMouseOver(d) {
+    d3.selectAll("#" + "s" + d.stopid)
+      .style("fill", "#ffff00")
+      .style("stroke", "#000000");
+  }
+
+  function barMouseOverEnd(d) {
+    d3.selectAll("#" + "s" + d.stopid)
+      .style("fill", function(d) {
+        if (d.route == 1) {
+          return "#cc79a1";
+        } else if (d.route == 43) {
+          return "#a24700";
+        } else if (d.route == "sl4") {
+          return "#0072b2";
+        } else if (d.route == "sl5") {
+          return "#009e73";
+        }
+      })
+      .style("stroke", "#000000");
+  }
 }
