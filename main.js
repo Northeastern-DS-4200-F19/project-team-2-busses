@@ -9,6 +9,7 @@ d3.json("stopskey.json").then(function(collection) {
 
   collection.forEach(function(d) {
     d.avMinDelay = +d.avMinDelay;
+    d.avFreqDelay = +d.avFreqDelay;
     //console.log(d.avMinDelay)
   });
 

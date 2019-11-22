@@ -82,6 +82,9 @@ function route1() {
         .enter()
         .append("rect")
         .attr("class", "bar")
+        .attr("id", function(d){
+          return "s" + d.stopid; //<-- Sets the ID of the point to the stops name
+        })    
         .attr("x", function(d) {
           return x(d.name);
         })
@@ -125,6 +128,31 @@ function route1() {
     .attr("dy", "1em")
     .style("text-anchor", "middle")
     .text("Minutes");
+
+    function barMouseOver(d) {
+
+        d3.selectAll(("#" + "s" + d.stopid))
+          .style("fill", "#ffff00")
+          .style("stroke", "#000000");
+      
+      };
+    
+    
+      function barMouseOverEnd(d) {
+        d3.selectAll(("#" + "s" + d.stopid))
+        .style("fill", function(d) {
+          if (d.route == 1) {
+            return "#cc79a1";
+          } else if (d.route == 43) {
+            return "#a24700";
+          } else if (d.route == "sl4") {
+            return "#0072b2";
+          } else if (d.route == "sl5") {
+            return "#009e73";
+          }
+        })
+        .style("stroke", "#000000");
+      }
 }
 //route1();
 
@@ -210,6 +238,9 @@ function route43() {
         .enter()
         .append("rect")
         .attr("class", "bar")
+        .attr("id", function(d){
+          return "s" + d.stopid; //<-- Sets the ID of the point to the stops name
+        })   
         .attr("x", function(d) {
           return x(d.name);
         })
@@ -337,6 +368,9 @@ function routesl4() {
         .enter()
         .append("rect")
         .attr("class", "bar")
+        .attr("id", function(d){
+          return "s" + d.stopid; //<-- Sets the ID of the point to the stops name
+        })   
         .attr("x", function(d) {
           return x(d.name);
         })
@@ -466,6 +500,9 @@ function routesl5() {
         .enter()
         .append("rect")
         .attr("class", "bar")
+        .attr("id", function(d){
+          return "s" + d.stopid; //<-- Sets the ID of the point to the stops name
+        })   
         .attr("x", function(d) {
           return x(d.name);
         })

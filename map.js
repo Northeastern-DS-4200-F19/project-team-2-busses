@@ -163,7 +163,9 @@ function map(d) {
       })
       .enter()
       .append("circle")
-      .attr("id", d => d.stopid)
+      .attr("id", function(d){
+        return "s" + d.stopid; //<-- Sets the ID of the point to the stops name
+      })
 
       .attr("r", 5)
       .attr("cx", mapPointX)
@@ -181,14 +183,40 @@ function map(d) {
       })
       .attr("stroke", "black")
       .on('mouseover', function () {
-        d3.select(this).classed("mouseover", true)
+        return mapMouseOver(d);
       
         
       })
       .on('mouseout', function (d) {
-        d3.select(this).classed("mouseover", false)
+        return mapMouseOverEnd(d);
       })
       .raise();
+
+      function mapMouseOver(d) {
+
+        d3.selectAll(("#" + "s" + d.stopid))
+          .style("fill", "#ffff00")
+          .style("stroke", "#000000");
+      
+      };
+    
+    
+      function mapMouseOverEnd(d) {
+        d3.selectAll(("#" + "s" + d.stopid))
+        .style("fill", function(d) {
+          if(d.route == 1) {
+            return "#cc79a1";
+          }else if(d.route == 43) {
+            return "#a24700"
+          }else if(d.route == "sl4") {
+            return "#0072b2"
+          } else if (d.route == "sl5") {
+            return "#009e73"
+          }
+        })
+          .style("stroke", "#000000");
+      }
+    
 
   }
       
@@ -232,7 +260,9 @@ function map(d) {
     })
     .enter()
     .append("circle")
-    .attr("id", d => d.stopid)
+    .attr("id", function(d){
+      return "s" + d.stopid; //<-- Sets the ID of the point to the stops name
+    })
 
     .attr("r", 5)
     .attr("cx", mapPointX)
@@ -249,16 +279,43 @@ function map(d) {
       }
     })
     .attr("stroke", "black")
-    .on('mouseover', function () {
-      d3.select(this).classed("mouseover", true)
+    .on('mouseover', function (d) {
+      //d3.select(this).classed("mouseover", true)
+      console.log(d);
+      return mapMouseOver(d);
     
       
     })
     .on('mouseout', function (d) {
-      d3.select(this).classed("mouseover", false)
+      //d3.select(this).classed("mouseover", false)
+      return mapMouseOverEnd(d);
     })
     .raise();
 
 }
 
 
+function mapMouseOver(d) {
+
+    d3.selectAll(("#" + "s" + d.stopid))
+      .style("fill", "#ffff00")
+      .style("stroke", "#000000");
+  
+  };
+
+
+  function mapMouseOverEnd(d) {
+    d3.selectAll(("#" + "s" + d.stopid))
+    .style("fill", function(d) {
+      if(d.route == 1) {
+        return "#cc79a1";
+      }else if(d.route == 43) {
+        return "#a24700"
+      }else if(d.route == "sl4") {
+        return "#0072b2"
+      } else if (d.route == "sl5") {
+        return "#009e73"
+      }
+    })
+      .style("stroke", "#000000");
+  }
