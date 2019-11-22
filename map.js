@@ -31,7 +31,6 @@ function map(d) {
     .attr("height", height);
   //var g = svg.append("g").attr("class", "leaflet-zoom-hide");
 
-
   // var outbound = d.filter(function(d) {
   //   return d.outbound == 1;
   // });
@@ -56,6 +55,17 @@ function map(d) {
   // var data = whichDirection();
   // console.log(data);
   // console.log(inbound);
+
+  var Brush = d3
+    .brush()
+    .extent([
+      [0, 0],
+      [width, height]
+    ]);
+    // .on("start brush", brushStart)
+    // .on("end", brushEnd);
+
+  svg.append("g").call(Brush);
 
   function mapPointX(d) {
     d.LatLng = new L.LatLng(d.latitude, d.longitude);
@@ -254,8 +264,6 @@ function map(d) {
       return mapMouseOverEnd(d);
     })
     .raise();
-
-    
 }
 
 function mapMouseOver(d) {
@@ -279,7 +287,6 @@ function mapMouseOverEnd(d) {
     })
     .style("stroke", "#000000");
 }
-
 
 var brushedStops = d3.set();
 
