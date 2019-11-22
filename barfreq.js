@@ -134,7 +134,7 @@ function route1freq() {
     .attr("x", 0 - height / 2)
     .attr("dy", "1em")
     .style("text-anchor", "middle")
-    .text("Minutes");
+    .text("Percentage");
 
     function barMouseOver(d) {
 
@@ -297,7 +297,7 @@ function route43freq() {
     .attr("x", 0 - height / 2)
     .attr("dy", "1em")
     .style("text-anchor", "middle")
-    .text("Minutes");
+    .text("Percentage");
 
     function barMouseOver(d) {
       d3.selectAll("#" + "s" + d.stopid)
@@ -446,7 +446,7 @@ function routesl4freq() {
     .attr("text-anchor", "middle")
     .style("font-size", "16px")
     .style("text-decoration", "underline")
-    .text("Route SL5 Average Frequency Delay");
+    .text("Route SL4 Average Frequency Delay");
 
   // text label for the y axis
   svg
@@ -456,7 +456,7 @@ function routesl4freq() {
     .attr("x", 0 - height / 2)
     .attr("dy", "1em")
     .style("text-anchor", "middle")
-    .text("Minutes");
+    .text("Percentage");
 
     function barMouseOver(d) {
       d3.selectAll("#" + "s" + d.stopid)
@@ -616,7 +616,7 @@ function routesl5freq() {
     .attr("x", 0 - height / 2)
     .attr("dy", "1em")
     .style("text-anchor", "middle")
-    .text("Minutes");
+    .text("Percentage");
 
     function barMouseOver(d) {
       d3.selectAll("#" + "s" + d.stopid)

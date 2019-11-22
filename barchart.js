@@ -442,7 +442,7 @@ function routesl4() {
     .attr("text-anchor", "middle")
     .style("font-size", "16px")
     .style("text-decoration", "underline")
-    .text("Route SL5 Average Minute Delay");
+    .text("Route SL4 Average Minute Delay");
 
   // text label for the y axis
   svg
