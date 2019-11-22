@@ -235,8 +235,12 @@
       </p>
 
       <video controls width="100%">
-        <source
+        <!-- <source
           src="http://www.ccs.neu.edu/home/cody/courses/shared/d3-flexible-transitions.mp4"
+          type="video/mp4"
+        /> -->
+        <source
+          src="MBTALiveDemo.mp4"
           type="video/mp4"
         />
         <p>
@@ -257,6 +261,17 @@
           UI walk-through, and linked presentation slides.</em
         >
         <br />
+        <em>In this visualization, we utilized a map and bar chart visualizations to show the
+          data we collected. The map was the best design choice for us as the data for stops
+          are organized with longitude and latitude data. We used the stopID data points to 
+          link to our bar charts. We used bar charts since the delay data points are quantitative
+          and are most effectively communicated through position. Additionally, color encodings
+          seperate the stops (pink for route 1, orange for route 43, blue for SL 4, and green for
+          SL 5). This allows users to quickly recognize the stops they are viewing. We visualized
+          the linking of data points through highlighting since it will be easy for users to recognize the
+          connection between points. We have two sets of bar charts: one for the average delay 
+          in minutes, and the other for the average frequency of delays per stop and route.  
+        </em>
         <a
           href="https://docs.google.com/presentation/d/19Cy82G8iFgubddoUPOIfgoOTV6mwtGmIPv90Rn9g0zE/edit?usp=sharing"
           >Presentation Slides</a

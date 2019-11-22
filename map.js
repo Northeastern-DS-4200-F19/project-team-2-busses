@@ -31,14 +31,6 @@ function map(d) {
     .attr("height", height);
   //var g = svg.append("g").attr("class", "leaflet-zoom-hide");
 
-  var Brush = d3.brush().extent([
-    [0, 0],
-    [width, height]
-  ]);
-  //.on("start brush", brushed)
-  //.on("end", brushEnd);
-
-  svg.append("g").call(Brush);
 
   // var outbound = d.filter(function(d) {
   //   return d.outbound == 1;
@@ -262,6 +254,8 @@ function map(d) {
       return mapMouseOverEnd(d);
     })
     .raise();
+
+    
 }
 
 function mapMouseOver(d) {
@@ -285,3 +279,8 @@ function mapMouseOverEnd(d) {
     })
     .style("stroke", "#000000");
 }
+
+
+var brushedStops = d3.set();
+
+var dispatcher = d3.dispatch("selectionUpdatedMap", "selectionUpdatedBar");
