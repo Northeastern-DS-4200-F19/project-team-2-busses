@@ -7,7 +7,7 @@
     <!-- Title -->
     <title>Project Team 2: Busses, DS 4200 F19</title>
     <link rel="stylesheet" href="style.css" />
- 
+
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
@@ -24,24 +24,24 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/favicons/apple-touch-icon.png"
+      href="favicons/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/favicons/favicon-32x32.png"
+      href="favicons/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="/favicons/favicon-16x16.png"
+      href="favicons/favicon-16x16.png"
     />
-    <link rel="manifest" href="/favicons/site.webmanifest" />
-    <link rel="shortcut icon" href="/favicons/favicon.ico" />
+    <link rel="manifest" href="favicons/site.webmanifest" />
+    <link rel="shortcut icon" href="favicons/favicon.ico" />
     <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="msapplication-config" content="/favicons/browserconfig.xml" />
+    <meta name="msapplication-config" content="favicons/browserconfig.xml" />
     <meta name="theme-color" content="#ffffff" />
   </head>
 
@@ -111,7 +111,6 @@
       </p>
 
       <h1>Visualization</h1>
-
     </div>
 
     <br />
@@ -165,9 +164,7 @@
       </div>
     </div>
 
-
     <br />
-
 
     <!-- Your writeup goes here -->
     <div class="content-column">
@@ -201,29 +198,48 @@
           UI walk-through, and linked presentation slides.</em
         >
         <br />
-        <img src="MapChecks.png" alt="" />
-        <img src="MinDelayExample.png" alt="" />
-        <img src="FreqDelayEx.png" alt="" />
-
+        <br />
         <em
           >In this visualization, we utilized a map and bar chart visualizations
-          to show the data we collected. The map was the best design choice for
-          us as the data for stops are organized with longitude and latitude
-          data. We used the stopID data points to link to our bar charts. We
-          used bar charts since the delay data points are quantitative and are
-          most effectively communicated through position. Additionally, color
-          encodings seperate the stops (pink for route 1, orange for route 43,
-          blue for SL 4, and green for SL 5). This allows users to quickly
+          to show the data we collected.</em
+        >
+        <br />
+        <img src="images/map.png" alt="" />
+        <em
+          >The map was the best design choice for us as the data for stops are
+          organized with longitude and latitude data. The map provides majority
+          of the interaction in our visualization. Due to this, we made it's
+          position sticky. If you click and drag on the map (brush), then you
+          will begin to highlight various points. The stops within that
+          selection are also reflected upon in the barcharts to the left. With
+          the "Outbound" check box, you can toggle the direction between
+          Outbound and Inbound. That checkbox affects all of the data shown in
+          our plots. Next, using the four "Route XX" radio buttons you can
+          filter what routes are presented on the map. The map was the best
+          design choice for us as the data for stops are organized with
+          longitude and latitude data. We used the stopID data points to link to
+          our bar charts.
+        </em>
+        <img src="images/averageDelay.png" alt="" />
+        <img src="images/freqDelay.png" alt="" />
+        <br />
+
+        <em>
+          We used bar charts since the delay data points are quantitative and
+          are most effectively communicated through position. Additionally,
+          color encodings seperate the stops (pink for route 1, orange for route
+          43, blue for SL 4, and green for SL 5). This allows users to quickly
           recognize the stops they are viewing. We visualized the linking of
           data points through highlighting since it will be easy for users to
           recognize the connection between points. We have two sets of bar
           charts: one for the average delay in minutes, and the other for the
-          average frequency of delays per stop and route.
+          average frequency of delays per stop and route. For more insight on
+          our project, please look at our
         </em>
         <a
           href="https://docs.google.com/presentation/d/19Cy82G8iFgubddoUPOIfgoOTV6mwtGmIPv90Rn9g0zE/edit?usp=sharing"
           >Presentation Slides</a
-        >
+        >.
       </p>
 
       <h1>Data Analysis</h1>
@@ -382,12 +398,15 @@
           >
         </li>
         <li>
-          <a href="http://labratrevenge.com/d3-tip/"
-            >d3.tip</a> maintained by Caged
+          <a href="http://labratrevenge.com/d3-tip/">d3.tip</a> maintained by
+          Caged
         </li>
         <li>
-          <a href="https://bl.ocks.org/caravinden/eb0e5a2b38c8815919290fa838c6b63b"
-            >Horizontal Bar chart d3.v4</a> by Aravind Cheekkallur
+          <a
+            href="https://bl.ocks.org/caravinden/eb0e5a2b38c8815919290fa838c6b63b"
+            >Horizontal Bar chart d3.v4</a
+          >
+          by Aravind Cheekkallur
         </li>
       </ul>
     </div>

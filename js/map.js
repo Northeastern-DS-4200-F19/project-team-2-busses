@@ -37,7 +37,7 @@ function map(d) {
   function brushed() {
     if (d3.event.selection === null) return;
     let selected = d3.event.selection;
-   
+
     stops.classed("burshedPoint", function(d) {
       if (isBrushed(selected, coordX(d), coordY(d))) {
         if (!selectedStops.has(this.id)) {
@@ -52,10 +52,9 @@ function map(d) {
 
       if (!isBrushed(selected, coordX(d), coordY(d))) {
         if (selectedStops.has(this.id)) {
-         
           selectedStops.remove(this.id);
           d3.select(this).attr("burshedPoint", "false");
-          d3.selectAll("#" + "s" +d.stopid)
+          d3.selectAll("#" + "s" + d.stopid)
             .style("fill", function(d) {
               if (d.route == 1) {
                 return "#cc79a1";
@@ -76,7 +75,10 @@ function map(d) {
 
   function isBrushed(selection, x, y) {
     return (
-      selection[0][0] <= x && selection[1][0] >= x && selection[0][1] <= y && selection[1][1] >= y
+      selection[0][0] <= x &&
+      selection[1][0] >= x &&
+      selection[0][1] <= y &&
+      selection[1][1] >= y
     );
   }
 
@@ -116,7 +118,6 @@ function map(d) {
         return d.route != 1;
       });
     } else {
-      
       data = data;
     }
 
@@ -125,11 +126,9 @@ function map(d) {
         return d.route != 43;
       });
     } else {
-     
       data = data;
     }
     if (!d3.select("#routesl4").property("checked")) {
-      
       data = data.filter(function(d) {
         return d.route != "sl4";
       });
@@ -172,7 +171,6 @@ function map(d) {
       })
       .attr("stroke", "black")
       .on("mouseover", function(d) {
-        
         return mapMouseOver(d);
       })
       .on("mouseout", function(d) {
@@ -187,7 +185,7 @@ function map(d) {
         .style("fill", "#ffff00")
         .style("stroke", "#000000");
     }
-  
+
     function mapMouseOverEnd(d) {
       d3.selectAll("#" + "s" + d.stopid)
         .style("fill", function(d) {
@@ -244,7 +242,6 @@ function map(d) {
     })
     .attr("stroke", "black")
     .on("mouseover", function(d) {
-      
       return mapMouseOver(d);
     })
     .on("mouseout", function(d) {
@@ -274,7 +271,6 @@ function map(d) {
       })
       .style("stroke", "#000000");
   }
-
 }
 
 function mapMouseOver(d) {
@@ -300,5 +296,3 @@ function mapMouseOverEnd(d) {
 }
 
 var selectedStops = d3.set();
-
-
