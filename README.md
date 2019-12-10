@@ -30,7 +30,7 @@ This website is served automatically from the default `gh-pages` branch at https
 
 * `style.css` contains the CSS.
 
-* `visualization.js` will contain your JavaScript and D3 code.
+* `js` contains all D3 and JavaScript code.
 
 * `LICENCE` is your source code license.
 
