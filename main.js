@@ -1,6 +1,6 @@
 //Calls all of the functions for the visualizations
 //Loads the data for the map
-d3.json("stopskey.json").then(function(collection) {
+d3.json("data/stopskey.json").then(function(collection) {
   collection.forEach(function(d) {
     d.avMinDelay = +d.avMinDelay;
     d.avFreqDelay = +d.avFreqDelay;
