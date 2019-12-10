@@ -15,65 +15,31 @@ function map(d) {
   map.doubleClickZoom.disable();
   map.dragging.disable();
 
-  // var width = map.getBounds().getEast() - map.getBounds().getWest();
-  // var height = map.getBounds().getNorth() - map.getBounds().getSouth();
-  // console.log(width);
-  // console.log(height);
-
   var width = 1000;
   var height = 1000;
-  //append a svg level to the leaflet map
-  //var svg = d3.select(map.getPanes().overlayPane).append("svg");
+
   var svg = d3
     .select(map.getPanes().overlayPane)
     .append("svg")
     .attr("width", width)
     .attr("height", height);
-  //var g = svg.append("g").attr("class", "leaflet-zoom-hide");
 
-  // var outbound = d.filter(function(d) {
-  //   return d.outbound == 1;
-  // });
-  // console.log(outbound);
-  // var inbound = d.filter(function(d) {
-  //   return d.outbound == 0;
-  // });
-
-  // function whichDirection() {
-  //     if(direction == 1) {
-  //         var data = d.filter(function(d) {
-  //           return d.outbound == 1;
-  //         });
-  //         return data;
-  //     }else {
-  //         var data = d.filter(function(d) {
-  //           return d.outbound == 0;
-  //         });
-  //     }
-  // }
-
-  // var data = whichDirection();
-  // console.log(data);
-  // console.log(inbound);
-
-  var Brush = d3
-    .brush()
-    .extent([
-      [0, 0],
-      [width, height]
-    ]);
-    // .on("start brush", brushStart)
-    // .on("end", brushEnd);
+  var Brush = d3.brush().extent([
+    [0, 0],
+    [width, height]
+  ]);
+  // .on("start brush", brushStart)
+  // .on("end", brushEnd);
 
   svg.append("g").call(Brush);
 
-  function mapPointX(d) {
+  function coordX(d) {
     d.LatLng = new L.LatLng(d.latitude, d.longitude);
     var x = map.latLngToLayerPoint(d.LatLng).x;
     return x;
   }
 
-  function mapPointY(d) {
+  function coordY(d) {
     d.LatLng = new L.LatLng(d.latitude, d.longitude);
     var y = map.latLngToLayerPoint(d.LatLng).y;
     return y;
@@ -153,8 +119,8 @@ function map(d) {
       })
 
       .attr("r", 5)
-      .attr("cx", mapPointX)
-      .attr("cy", mapPointY)
+      .attr("cx", coordX)
+      .attr("cy", coordY)
       .attr("fill", function(d) {
         if (d.route == 1) {
           return "#cc79a1";
@@ -167,38 +133,15 @@ function map(d) {
         }
       })
       .attr("stroke", "black")
-      .on("mouseover", function() {
+      .on("mouseover", function(d) {
+        console.log(d);
         return mapMouseOver(d);
       })
       .on("mouseout", function(d) {
         return mapMouseOverEnd(d);
       })
       .raise();
-
-    function mapMouseOver(d) {
-      d3.selectAll("#" + "s" + d.stopid)
-        .style("fill", "#ffff00")
-        .style("stroke", "#000000");
-    }
-
-    function mapMouseOverEnd(d) {
-      d3.selectAll("#" + "s" + d.stopid)
-        .style("fill", function(d) {
-          if (d.route == 1) {
-            return "#cc79a1";
-          } else if (d.route == 43) {
-            return "#a24700";
-          } else if (d.route == "sl4") {
-            return "#0072b2";
-          } else if (d.route == "sl5") {
-            return "#009e73";
-          }
-        })
-        .style("stroke", "#000000");
-    }
   }
-
-  //console.log(d3.select("#route1").property("checked"));
 
   d3.select("#route1").on("change", updateStops);
   d3.select("#route43").on("change", updateStops);
@@ -207,22 +150,6 @@ function map(d) {
   d3.select("#direction").on("change", updateStops);
   d3.selectAll(".reveal-btn").on("click", updateStops);
   updateStops();
-
-  //   var line = d3
-  //     .line()
-  //     .x(function(d) {
-  //       return mapPointX(d);
-  //     })
-  //     .y(function(d) {
-  //       return mapPointY(d);
-  //     })
-  //     .curve(d3.curveCardinal.tension(0.5));
-
-  //   svg
-  //     .append("path")
-  //     .data([outbound])
-  //     .attr("d", line)
-  //     .attr("class", "lineConnect");
 
   data = d.filter(function(d) {
     return d.outbound == 1;
@@ -240,8 +167,8 @@ function map(d) {
     })
 
     .attr("r", 5)
-    .attr("cx", mapPointX)
-    .attr("cy", mapPointY)
+    .attr("cx", coordX)
+    .attr("cy", coordY)
     .attr("fill", function(d) {
       if (d.route == 1) {
         return "#cc79a1";
@@ -255,12 +182,12 @@ function map(d) {
     })
     .attr("stroke", "black")
     .on("mouseover", function(d) {
-      //d3.select(this).classed("mouseover", true)
+      
       console.log(d);
       return mapMouseOver(d);
     })
     .on("mouseout", function(d) {
-      //d3.select(this).classed("mouseover", false)
+      
       return mapMouseOverEnd(d);
     })
     .raise();
