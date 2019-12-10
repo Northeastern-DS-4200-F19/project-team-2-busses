@@ -1,23 +1,11 @@
-//  function getDirection() {
-//   direction();
-// }
-// var directionDigit = getDirection();
-// console.log(directionDigit);
-
+//Calls all of the functions for the visualizations
+//Loads the data for the map
 d3.json("stopskey.json").then(function(collection) {
-  //var direction = document.getElementById("outbound").checked;
-
   collection.forEach(function(d) {
     d.avMinDelay = +d.avMinDelay;
     d.avFreqDelay = +d.avFreqDelay;
-    //console.log(d.avMinDelay)
   });
 
-  
-  // General event type for selections, used by d3-dispatch
-  // https://github.com/d3/d3-dispatch
-  const dispatchString = "selectionUpdated";
- 
   var geo = map(collection);
   route1();
   route43();
@@ -27,6 +15,4 @@ d3.json("stopskey.json").then(function(collection) {
   route43freq();
   routesl4freq();
   routesl5freq();
-
 });
-

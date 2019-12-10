@@ -22,14 +22,12 @@ function route1freq() {
     .padding(0.1);
 
   d3.json("stopskey.json").then(function(data) {
-    // dat = data.filter(function(d) {
-    //   return d.outbound === 1;
-    // });
-
+    //filter the data for the respective route
     data = data.filter(function(d) {
       return d.route == 1;
     });
 
+    //check box event for switching the direction
     d3.select("#direction").on("change.route1Freq", update1freq);
     update1freq();
     function update1freq() {
@@ -45,6 +43,7 @@ function route1freq() {
         });
       }
 
+      //resets the bars and axes
       svg.selectAll(".bar").remove();
       svg.selectAll(".axis").remove();
 
@@ -145,12 +144,14 @@ function route1freq() {
         .call(d3.axisLeft(y))
         .attr("class", "axis");
 
+      //highlights the bar in yellow whne hovered over
       function barMouseOver(d) {
         d3.selectAll("#" + "s" + d.stopid)
           .style("fill", "#ffff00")
           .style("stroke", "#000000");
       }
 
+      //returns the bar back to original color
       function barMouseOverEnd(d) {
         d3.selectAll("#" + "s" + d.stopid)
           .style("fill", function(d) {
@@ -168,6 +169,7 @@ function route1freq() {
       }
     }
 
+    //Title
     svg
       .append("text")
       .attr("x", width / 2)
@@ -178,6 +180,8 @@ function route1freq() {
       .text("Route 1 Frequency of Delay");
   });
 }
+
+//It is the same process for the charts below as well just for the three other routes
 
 //Route 43 Average Miute Delay Barchart
 function route43freq() {

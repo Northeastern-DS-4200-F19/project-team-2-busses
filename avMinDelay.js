@@ -22,16 +22,12 @@ function route1() {
     .padding(0.1);
 
   d3.json("stopskey.json").then(function(data) {
-    
-
-    // dat = data.filter(function(d) {
-    //   return d.outbound === 1;
-    // });
-
+    //filter for the respective route
     data = data.filter(function(d) {
       return d.route == 1;
     });
 
+    //checkbox event observer/ switches the data based on direction
     d3.select("#direction").on("change.route1Min", update1);
     update1();
     function update1() {
@@ -41,14 +37,13 @@ function route1() {
         dat = dat.filter(function(d) {
           return d.outbound === 1;
         });
-        
       } else {
         dat = dat.filter(function(d) {
           return d.outbound == 0;
         });
-        
       }
 
+      //reset the bars and axes
       svg.selectAll(".bar").remove();
       svg.selectAll(".axis").remove();
 
@@ -149,12 +144,14 @@ function route1() {
         .call(d3.axisLeft(y))
         .attr("class", "axis");
 
+      //highligh the bar in yellow when hovered
       function barMouseOver(d) {
         d3.selectAll("#" + "s" + d.stopid)
           .style("fill", "#ffff00")
           .style("stroke", "#000000");
       }
 
+      //return the bar back to its respective color
       function barMouseOverEnd(d) {
         d3.selectAll("#" + "s" + d.stopid)
           .style("fill", function(d) {
@@ -183,6 +180,8 @@ function route1() {
   });
 }
 
+//Same process for the charts below just by different routes
+
 //Route 43 Average Miute Delay Barchart
 function route43() {
   var margin = { top: 50, right: 230, bottom: 30, left: 240 },
@@ -207,8 +206,6 @@ function route43() {
     .padding(0.1);
 
   d3.json("stopskey.json").then(function(data) {
-    
-
     // dat = data.filter(function(d) {
     //   return d.outbound === 1;
     // });
@@ -226,12 +223,10 @@ function route43() {
         dat = dat.filter(function(d) {
           return d.outbound === 1;
         });
-        
       } else {
         dat = dat.filter(function(d) {
           return d.outbound == 0;
         });
-        
       }
 
       svg.selectAll(".bar").remove();
@@ -393,8 +388,6 @@ function routesl4() {
     .padding(0.1);
 
   d3.json("stopskey.json").then(function(data) {
-    
-
     // dat = data.filter(function(d) {
     //   return d.outbound === 1;
     // });
@@ -412,12 +405,10 @@ function routesl4() {
         dat = dat.filter(function(d) {
           return d.outbound === 1;
         });
-        
       } else {
         dat = dat.filter(function(d) {
           return d.outbound == 0;
         });
-        
       }
 
       svg.selectAll(".bar").remove();
@@ -579,8 +570,6 @@ function routesl5() {
     .padding(0.1);
 
   d3.json("stopskey.json").then(function(data) {
-    
-
     data = data.filter(function(d) {
       return d.route == "sl5";
     });
@@ -594,12 +583,10 @@ function routesl5() {
         dat = dat.filter(function(d) {
           return d.outbound === 1;
         });
-        
       } else {
         dat = dat.filter(function(d) {
           return d.outbound == 0;
         });
-        
       }
 
       svg.selectAll(".bar").remove();

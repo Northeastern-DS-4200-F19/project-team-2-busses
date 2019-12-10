@@ -33,7 +33,7 @@ function map(d) {
     .on("start brush", brushed)
     .on("end", brushEnd);
 
-  //Highlighting and updating points
+  //Main brushing function of our map. Highlights the points withthin the brush's selection
   function brushed() {
     if (d3.event.selection === null) return;
     let selected = d3.event.selection;
