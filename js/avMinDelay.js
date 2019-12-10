@@ -21,7 +21,7 @@ function route1() {
     .range([height, 0])
     .padding(0.1);
 
-  d3.json("../data/stopskey.json").then(function(data) {
+  d3.json("../stopskey.json").then(function(data) {
     console.log(data);
 
     // dat = data.filter(function(d) {
@@ -206,7 +206,7 @@ function route43() {
     .range([height, 0])
     .padding(0.1);
 
-  d3.json("../data/stopskey.json").then(function(data) {
+  d3.json("../stopskey.json").then(function(data) {
     console.log(data);
 
     // dat = data.filter(function(d) {
@@ -392,7 +392,7 @@ function routesl4() {
     .range([height, 0])
     .padding(0.1);
 
-  d3.json("../data/stopskey.json").then(function(data) {
+  d3.json("../stopskey.json").then(function(data) {
     console.log(data);
 
     // dat = data.filter(function(d) {
@@ -578,7 +578,7 @@ function routesl5() {
     .range([height, 0])
     .padding(0.1);
 
-  d3.json("../data/stopskey.json").then(function(data) {
+  d3.json("../stopskey.json").then(function(data) {
     console.log(data);
 
     data = data.filter(function(d) {
