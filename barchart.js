@@ -24,7 +24,7 @@ function route1() {
       return d.route == 1;
     });
 
-    //d3.select("#direction").on("change", update1);
+    d3.select("#direction").on("change", update1);
     update1();
     function update1() {
       console.log(d3.select("#direction").property("checked"));

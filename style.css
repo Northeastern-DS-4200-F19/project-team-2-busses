@@ -28,6 +28,12 @@ h3 {
   display:inline-block;
 }
 
+.map-legend {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  bottom: 1rem;
+  align-self: flex-end;
+}
 #wrapper {
   display: flex;
 }
