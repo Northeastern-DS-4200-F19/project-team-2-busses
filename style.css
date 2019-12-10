@@ -122,13 +122,14 @@ h3 {
   background: rgba(0, 0, 0, 0.5);
   color: white;
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 
 /* The scatterplot will take the right half of the screen */
 .barchart-holder {
   float: right;
+  margin-left: 125px ;
 }
 
 #leftcolumn {
@@ -136,3 +137,5 @@ h3 {
   float: left;
   position: sticky;
 }
+
+.axis { font: 15px sans-serif; }

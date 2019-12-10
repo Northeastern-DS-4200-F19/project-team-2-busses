@@ -1,8 +1,8 @@
 //Route 1 Avergae Minute Delay barchart
 function route1freq() {
     var margin = { top: 50, right: 230, bottom: 30, left: 240 },
-      width = 700 - margin.left - margin.right,
-      height = 600 - margin.top - margin.bottom;
+      width = 800 - margin.left - margin.right,
+      height = 700 - margin.top - margin.bottom;
   
     //create the svg
     var svg = d3
@@ -186,8 +186,8 @@ function route1freq() {
   //Route 43 Average Miute Delay Barchart
   function route43freq() {
     var margin = { top: 50, right: 230, bottom: 30, left: 240 },
-      width = 700 - margin.left - margin.right,
-      height = 600 - margin.top - margin.bottom;
+      width = 800 - margin.left - margin.right,
+      height = 700 - margin.top - margin.bottom;
   
     //create the svg
     var svg = d3
@@ -364,7 +364,7 @@ function route1freq() {
         .attr("text-anchor", "middle")
         .style("font-size", "16px")
         .style("text-decoration", "underline")
-        .text("Route 43 Freqency of Delay");
+        .text("Route 43 Frequency of Delay");
     });
   }
   
@@ -395,9 +395,7 @@ function route1freq() {
     d3.json("stopskey.json").then(function(data) {
       console.log(data);
   
-      // dat = data.filter(function(d) {
-      //   return d.outbound === 1;
-      // });
+      
   
       data = data.filter(function(d) {
         return d.route == "sl4";
@@ -550,7 +548,7 @@ function route1freq() {
         .attr("text-anchor", "middle")
         .style("font-size", "16px")
         .style("text-decoration", "underline")
-        .text("Route SL4 Frequncey of Delay");
+        .text("Route SL4 Frequency of Delay");
     });
   }
   
@@ -558,8 +556,8 @@ function route1freq() {
   
   function routesl5freq() {
     var margin = { top: 50, right: 230, bottom: 30, left: 240 },
-      width = 700 - margin.left - margin.right,
-      height = 600 - margin.top - margin.bottom;
+      width = 800 - margin.left - margin.right,
+      height = 700 - margin.top - margin.bottom;
   
     //create the svg
     var svg = d3
@@ -732,7 +730,7 @@ function route1freq() {
         .attr("text-anchor", "middle")
         .style("font-size", "16px")
         .style("text-decoration", "underline")
-        .text("Route SL5 Frequncey of Delay");
+        .text("Route SL5 Frequency of Delay");
     });
   }
   

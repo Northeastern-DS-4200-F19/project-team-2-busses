@@ -1,8 +1,8 @@
 //Route 1 Avergae Minute Delay barchart
 function route1() {
   var margin = { top: 50, right: 230, bottom: 30, left: 240 },
-    width = 700 - margin.left - margin.right,
-    height = 600 - margin.top - margin.bottom;
+    width = 800 - margin.left - margin.right,
+    height = 700 - margin.top - margin.bottom;
 
   //create the svg
   var svg = d3
@@ -186,8 +186,8 @@ function route1() {
 //Route 43 Average Miute Delay Barchart
 function route43() {
   var margin = { top: 50, right: 230, bottom: 30, left: 240 },
-    width = 700 - margin.left - margin.right,
-    height = 600 - margin.top - margin.bottom;
+    width = 800 - margin.left - margin.right,
+    height = 700 - margin.top - margin.bottom;
 
   //create the svg
   var svg = d3
@@ -372,8 +372,8 @@ function route43() {
 
 function routesl4() {
   var margin = { top: 50, right: 230, bottom: 30, left: 240 },
-    width = 700 - margin.left - margin.right,
-    height = 600 - margin.top - margin.bottom;
+    width = 800 - margin.left - margin.right,
+    height = 700 - margin.top - margin.bottom;
 
   //create the svg
   var svg = d3
@@ -558,8 +558,8 @@ function routesl4() {
 
 function routesl5() {
   var margin = { top: 50, right: 230, bottom: 30, left: 240 },
-    width = 700 - margin.left - margin.right,
-    height = 600 - margin.top - margin.bottom;
+    width = 800 - margin.left - margin.right,
+    height = 700 - margin.top - margin.bottom;
 
   //create the svg
   var svg = d3
