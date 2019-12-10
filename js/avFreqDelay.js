@@ -21,7 +21,7 @@ function route1freq() {
       .range([height, 0])
       .padding(0.1);
   
-    d3.json("stopskey.json").then(function(data) {
+    d3.json("../data/stopskey.json").then(function(data) {
       console.log(data);
   
       // dat = data.filter(function(d) {
@@ -206,7 +206,7 @@ function route1freq() {
       .range([height, 0])
       .padding(0.1);
   
-    d3.json("stopskey.json").then(function(data) {
+    d3.json("../data/stopskey.json").then(function(data) {
       console.log(data);
   
       // dat = data.filter(function(d) {
@@ -392,7 +392,7 @@ function route1freq() {
       .range([height, 0])
       .padding(0.1);
   
-    d3.json("stopskey.json").then(function(data) {
+    d3.json("../data/stopskey.json").then(function(data) {
       console.log(data);
   
       
@@ -576,7 +576,7 @@ function route1freq() {
       .range([height, 0])
       .padding(0.1);
   
-    d3.json("stopskey.json").then(function(data) {
+    d3.json("../data/stopskey.json").then(function(data) {
       console.log(data);
   
       data = data.filter(function(d) {

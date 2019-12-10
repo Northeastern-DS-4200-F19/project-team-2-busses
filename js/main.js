@@ -4,7 +4,7 @@
 // var directionDigit = getDirection();
 // console.log(directionDigit);
 
-d3.json("stopskey.json").then(function(collection) {
+d3.json("../data/stopskey.json").then(function(collection) {
   //var direction = document.getElementById("outbound").checked;
 
   collection.forEach(function(d) {
