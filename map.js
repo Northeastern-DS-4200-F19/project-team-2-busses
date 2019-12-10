@@ -24,14 +24,69 @@ function map(d) {
     .attr("width", width)
     .attr("height", height);
 
-  var Brush = d3.brush().extent([
-    [0, 0],
-    [width, height]
-  ]);
-  // .on("start brush", brushStart)
-  // .on("end", brushEnd);
+  var Brush = d3
+    .brush()
+    .extent([
+      [0, 0],
+      [width, height]
+    ])
+    .on("start brush", brushed)
+    .on("end", brushEnd);
 
-  svg.append("g").call(Brush);
+  //Highlighting and updating points
+  function brushed() {
+    if (d3.event.selection === null) return;
+    let selected = d3.event.selection;
+    //console.log(selected)
+    stops.classed("burshedPoint", function(d) {
+      if (isBrushed(selected, coordX(d), coordY(d))) {
+        if (!brushedStops.has(this.id)) {
+          brushedStops.add(this.id);
+          console.log(d.stopid)
+          //console.log(this.id);
+          d3.select(this).attr("burshedPoint", "true");
+
+          d3.selectAll("#" + "s" + d.stopid)
+            .style("fill", "#ffff00")
+            .style("stroke", "#000000");
+        }
+      }
+
+      if (!isBrushed(selected, coordX(d), coordY(d))) {
+        if (brushedStops.has(this.id)) {
+         
+          brushedStops.remove(this.id);
+          d3.select(this).attr("burshedPoint", "false");
+          d3.selectAll("#" + "s" +d.stopid)
+            .style("fill", function(d) {
+              if (d.route == 1) {
+                return "#cc79a1";
+              } else if (d.route == 43) {
+                return "#a24700";
+              } else if (d.route == "sl4") {
+                return "#0072b2";
+              } else if (d.route == "sl5") {
+                return "#009e73";
+              }
+            })
+            .style("stroke", "#000000");
+        }
+      }
+      return isBrushed(selected, coordX(d), coordY(d));
+    });
+  }
+
+  function isBrushed(selection, x, y) {
+    return (
+      selection[0][0] <= x && selection[1][0] >= x && selection[0][1] <= y && selection[1][1] >= y
+    );
+  }
+
+  function brushEnd() {
+    if (d3.event.sourceEvent.type != "end") {
+      d3.select(this).call(Brush.move, null);
+    }
+  }
 
   function coordX(d) {
     d.LatLng = new L.LatLng(d.latitude, d.longitude);
@@ -52,58 +107,43 @@ function map(d) {
       data = data.filter(function(d) {
         return d.outbound === 1;
       });
-      //console.log(data);
     } else {
       data = data.filter(function(d) {
         return d.outbound == 0;
       });
-      //console.log(data);
     }
 
     if (!d3.select("#route1").property("checked")) {
-      //console.log(d3.select("#route1").property("checked"));
       data = data.filter(function(d) {
         return d.route != 1;
       });
-      //console.log(data);
     } else {
       console.log(d3.select("#route1").property("checked"));
       data = data;
-      //console.log(data);
     }
 
     if (!d3.select("#route43").property("checked")) {
-      //console.log(d3.select("#route43").property("checked"));
       data = data.filter(function(d) {
         return d.route != 43;
       });
-      //console.log(data);
     } else {
       console.log(d3.select("#route43").property("checked"));
       data = data;
-      //console.log(data);
     }
     if (!d3.select("#routesl4").property("checked")) {
       console.log(d3.select("#routesl4").property("checked"));
       data = data.filter(function(d) {
         return d.route != "sl4";
       });
-      //console.log(data);
     } else {
-      //console.log(d3.select("#routesl4").property("checked"));
       data = data;
-      //console.log(data);
     }
     if (!d3.select("#routesl5").property("checked")) {
-      //console.log(d3.select("#routesl5").property("checked"));
       data = data.filter(function(d) {
         return d.route != "sl5";
       });
-      //console.log(data);
     } else {
-      //console.log(d3.select("#routesl5").property("checked"));
       data = data;
-      //console.log(data);
     }
 
     svg.selectAll("circle").remove();
@@ -141,6 +181,8 @@ function map(d) {
         return mapMouseOverEnd(d);
       })
       .raise();
+
+    svg.append("g").call(Brush);
   }
 
   d3.select("#route1").on("change", updateStops);
@@ -182,15 +224,14 @@ function map(d) {
     })
     .attr("stroke", "black")
     .on("mouseover", function(d) {
-      
       console.log(d);
       return mapMouseOver(d);
     })
     .on("mouseout", function(d) {
-      
       return mapMouseOverEnd(d);
     })
     .raise();
+  svg.append("g").call(Brush);
 }
 
 function mapMouseOver(d) {

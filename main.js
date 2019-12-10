@@ -17,8 +17,8 @@ d3.json("stopskey.json").then(function(collection) {
   // General event type for selections, used by d3-dispatch
   // https://github.com/d3/d3-dispatch
   const dispatchString = "selectionUpdated";
-  //console.log(collection);
-  var geo = map(collection); //.selectionDispatcher(d3.dispatch(dispatchString));
+ 
+  var geo = map(collection);
   route1();
   route43();
   routesl4();
