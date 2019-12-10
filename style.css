@@ -19,13 +19,12 @@ h3 {
   margin: 40px auto;
 }
 
-
-
 /* But your visualization should be full-width and full-height */
 .vis-holder {
   width: 100%;
   height: 100%;
-  display:inline-block;
+  display: inline-block;
+  display: flex;
 }
 
 .map-legend {
@@ -36,140 +35,13 @@ h3 {
 }
 #wrapper {
   display: flex;
-}
-
-#left {
-  flex: 0 0 65%;
-}
-
-#right {
-  flex: 1;
-}
-/* .delay-chart {
-  width: 100px;
-  height: 100px;
-} */
-
-#map {
-  width: 500px;
-  height: 500px;
-  
-}
-
-#scrubbar {
-  width: 900px;
-  height: 20px;
-  margin: 25px;
-}
-
-.container {
-  width: 900px;
-  height: 20px;
-  margin: 40px auto;
-}
-.lineConnect {
-  fill: none;
-  stroke: black;
-  opacity: 1;
-}
-
-/* #route1-btn:active {
-  background-color: #cc79a1;
-  border-color: #8e5470;
-}
-
-#route1-btn {
-  background-color: #e5bcd0;
-  border-color: #8e5470;
-}
-
-#route43-btn:active {
-  background-color: #d55e00;
-  border-color: #a24700;
-}
-
-#route43-btn {
-  background-color: #eaae7f;
-  border-color: #a24700;
-}
-
-#routeSL4-btn:active {
-  background-color: #0072b2;
-  border-color: #00517f;
-}
-
-#routeSL4-btn {
-  background-color: #99c6e0;
-  border-color: #00517f;
-}
-
-#routeSL5-btn:active {
-  background-color: #009e73;
-  border-color: #006b4e;
-}
-
-#routeSL5-btn {
-  background-color: #b2e1d5;
-  border-color: #006b4e;
-} */
-
-#scrubbar {
-  /* width of the contianer*/
-  width: 625px;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto;
-  justify-content: start;
-}
-
-
-#wrapper {
   width: 1500px;
 }
 
-#content {
-  float: right;
-  background: #FFFFFF;
-  width: 500px;
+#map {
+  width: 600px;
+  height: 600px;
 }
-
-#leftcolumn {
-  width: 550px;
-  float: left;
-  position: sticky;
-}
-
-.slider {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 15px;
-  border-radius: 5px;
-  background: #d3d3d3;
-  outline: none;
-  -webkit-transition: 0.2s;
-  transition: opacity 0.2s;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: #4caf50;
-  cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: #4caf50;
-  cursor: pointer;
-}
-
 
 /* Fork on GitHub ribbon via https://codepo8.github.io/css-fork-on-github-ribbon/# */
 #forkongithub a {
@@ -229,42 +101,6 @@ h3 {
   }
 }
 
-
-/* for the parallel coords */
-svg {
-  font: 10px sans-serif;
-}
-
-.background path {
-  fill: none;
-  stroke: #ddd;
-  shape-rendering: crispEdges;
-}
-
-.foreground path {
-  fill: none;
-  stroke: darkorchid;
-}
-
-.brush .extent {
-  fill-opacity: .3;
-  stroke: #fff;
-  shape-rendering: crispEdges;
-}
-
-.axis line,
-.axis path {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-
-.axis text {
-  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
-  cursor: move;
-}
-
-
 /* new */
 #filters {
   position: relative;
@@ -272,176 +108,31 @@ svg {
   display: block;
 }
 
-/* test button stylying  */
-/* The container */
-.check-box-container {
-  display: block;
-  position: relative;
-  display: inline-block;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+.burshedPoint {
+  fill: yellow;
 }
 
-/* Hide the browser's default checkbox */
-.check-box-container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+.mouseover {
+  fill: yellow;
 }
 
-/* Create a custom checkbox */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
-}
-
-/* On mouse-over, add a grey background color */
-.check-box-container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-.check-box-container#route-1-btn input:checked ~ .checkmark {
-  background-color: #cc79a1;
-}
-
-.check-box-container#route-43-btn input:checked ~ .checkmark {
-  background-color: #a24700;
-}
-
-.check-box-container#route-sl4-btn input:checked ~ .checkmark {
-  background-color: #0072b2;
-}
-
-.check-box-container#route-sl5-btn input:checked ~ .checkmark {
-  background-color: #009e73;
-}
-
-/* #route-sl4-btn.check-box-container input:checked ~ .checkmark {
-  background-color: #2196F3;
-}
-
-#route-sl5-btn.check-box-container input:checked ~ .checkmark {
-  background-color: #2196F3;
-} */
-
-
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.check-box-container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.check-box-container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-/* more button group shit  */
-.reveal-btn {
-	box-shadow:inset 0px 1px 0px 0px #ffffff;
-	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
-	background-color:#ffffff;
-	border-radius:6px;
-	border:1px solid #dcdcdc;
-	display:inline-block;
-	cursor:pointer;
-	color:#666666;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:9px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #ffffff;
-}
-.reveal-btn:hover {
-	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
-	background-color:#f6f6f6;
-}
-.reveal-btn:active {
-	position:relative;
-	top:1px;
+.d3-tip {
+  line-height: 1;
+  padding: 6px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
 }
 
 
-/* on off maybe  */
-.onoffswitch {
-  position: relative; width: 110px; 
-  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
-}
-.onoffswitch-checkbox {
-  display: none;
-}
-.onoffswitch-label {
-  display: block; overflow: hidden; cursor: pointer;
-  border: 2px solid #999999; border-radius: 20px;
-}
-.onoffswitch-inner {
-  display: block; width: 200%; margin-left: -100%;
-  transition: margin 0.3s ease-in 0s;
-}
-.onoffswitch-inner:before, .onoffswitch-inner:after {
-  display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
-  font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
-  box-sizing: border-box;
-}
-.onoffswitch-inner:before {
-  content: "Outbound";
-  padding-left: 10px;
-  background-color: #FFD800; color: #000000;
-}
-.onoffswitch-inner:after {
-  content: "Inbound";
-  padding-right: 10px;
-  background-color: #FFD800; color: #000000;
-  text-align: right;
-}
-.onoffswitch-switch {
-  display: block; width: 18px; margin: 6px;
-  background: #FFFFFF;
-  position: absolute; top: 0; bottom: 0;
-  right: 76px;
-  border: 2px solid #999999; border-radius: 20px;
-  transition: all 0.3s ease-in 0s; 
-}
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
-  margin-left: 0;
-}
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-  right: 0px; 
+/* The scatterplot will take the right half of the screen */
+.barchart-holder {
+  float: right;
 }
 
-.burshedPoint{
-	fill: yellow;
-}
-
-.mouseover{
-	fill: yellow;
+#leftcolumn {
+  width: 550px;
+  float: left;
+  position: sticky;
 }

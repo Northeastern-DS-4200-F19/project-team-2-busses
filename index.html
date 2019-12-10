@@ -6,20 +6,8 @@
 
     <!-- Title -->
     <title>Project Team 2: Busses, DS 4200 F19</title>
-
-    <!-- CSS Styling -->
-    <!-- Bootstrap Styling (Overrides the given style sheet, will have to deal with later.) -->
-    <!-- <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    /> -->
-
-    <!-- <link rel="stylesheet" href="https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/> -->
-    <!-- <link rel="stylesheet" href="lib/leaflet/leaflet.css" /> -->
     <link rel="stylesheet" href="style.css" />
-    <!-- <script src="lib/leaflet/leaflet.js"></script> -->
+ 
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
@@ -32,7 +20,6 @@
       crossorigin=""
     ></script>
 
-    <!-- <script src="https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script> -->
     <!-- Favicons -->
     <link
       rel="apple-touch-icon"
@@ -125,18 +112,12 @@
 
       <h1>Visualization</h1>
 
-      <!-- <p>
-        <em
-          >Include the interactive visualization as part of this page. Static
-          example follows.</em
-        >
-      </p> -->
     </div>
 
     <br />
 
-    <div id="wrapper">
-      <div id="leftcolumn" class = "map-legend">
+    <div class="vis-holder">
+      <div id="leftcolumn" class="map-legend">
         <div id="map"></div>
         <div id="buttons">
           <input type="checkbox" id="direction" class="filter" checked />
@@ -171,56 +152,22 @@
           <button class="reveal-btn" onclick="UnSelectAll()">Check None</button>
         </div>
       </div>
-      <div id="content">
-        <div class="grid-container">
-          <div class="grid-item" id="route1bar"></div>
-          <div class="grid-item" id="route43bar"></div>
-          <div class="grid-item" id="routesl4bar"></div>
-          <div class="grid-item" id="routesl5bar"></div>
-          <div id="route1freq" class="vis"></div>
-          <div id="route43freq" class="vis"></div>
-          <div id="routesl4freq" class="vis"></div>
-          <div id="routesl5freq" class="vis"></div>
-        </div>
+      <div class="barchart-holder">
+        <div id="route1bar"></div>
+        <div id="route43bar"></div>
+        <div id="routesl4bar"></div>
+        <div id="routesl5bar"></div>
+
+        <div id="route1freq" class="vis"></div>
+        <div id="route43freq" class="vis"></div>
+        <div id="routesl4freq" class="vis"></div>
+        <div id="routesl5freq" class="vis"></div>
       </div>
     </div>
 
-    <!-- <div id="route1bar" class="vis"></div>
-        <div id="route43bar" class="vis"></div>
-        <div id="routesl4bar" class="vis"></div>
-        <div id="routesl5bar" class="vis"></div> -->
-
-    <!-- <div id="scrubbar">
-        <input
-          type="range"
-          min="1"
-          max="100"
-          value="0"
-          class="slider"
-          id="myScrubber"
-        />
-      </div> -->
 
     <br />
-    <!-- Your visualization here -->
-    <div class="vis-holder"></div>
 
-    <div class="vis-holder"></div>
-
-    <!-- Parallel Coordinates Visualizations -->
-    <!--<div class="parallel-containter">
-	
-	
-		<div id="route-1-parallel=vis" class="parallel-cord"></div>
-		
-		
-		<div id="route-43-parallel=vis" class="parallel-cord"></div>
-		
-		
-		<div id="route-sl4-parallel=vis" class="parallel-cord"></div>
-		
-		
-		<div id="route-sl5-parallel=vis" class="parallel-cord"></div> -->
 
     <!-- Your writeup goes here -->
     <div class="content-column">
@@ -235,14 +182,7 @@
       </p>
 
       <video controls width="100%">
-        <!-- <source
-          src="http://www.ccs.neu.edu/home/cody/courses/shared/d3-flexible-transitions.mp4"
-          type="video/mp4"
-        /> -->
-        <source
-          src="DS 4200 F19 Team 2 - Demo Video.mp4"
-          type="video/mp4"
-        />
+        <source src="DS 4200 F19 Team 2 - Demo Video.mp4" type="video/mp4" />
         <p>
           Your browser doesn't support HTML5 video. Here is a
           <a
@@ -261,20 +201,24 @@
           UI walk-through, and linked presentation slides.</em
         >
         <br />
-        <img src="MapChecks.png" alt="">
-        <img src="MinDelayExample.png" alt="">
-        <img src="FreqDelayEx.png" alt="">
+        <img src="MapChecks.png" alt="" />
+        <img src="MinDelayExample.png" alt="" />
+        <img src="FreqDelayEx.png" alt="" />
 
-        <em>In this visualization, we utilized a map and bar chart visualizations to show the
-          data we collected. The map was the best design choice for us as the data for stops
-          are organized with longitude and latitude data. We used the stopID data points to 
-          link to our bar charts. We used bar charts since the delay data points are quantitative
-          and are most effectively communicated through position. Additionally, color encodings
-          seperate the stops (pink for route 1, orange for route 43, blue for SL 4, and green for
-          SL 5). This allows users to quickly recognize the stops they are viewing. We visualized
-          the linking of data points through highlighting since it will be easy for users to recognize the
-          connection between points. We have two sets of bar charts: one for the average delay 
-          in minutes, and the other for the average frequency of delays per stop and route.  
+        <em
+          >In this visualization, we utilized a map and bar chart visualizations
+          to show the data we collected. The map was the best design choice for
+          us as the data for stops are organized with longitude and latitude
+          data. We used the stopID data points to link to our bar charts. We
+          used bar charts since the delay data points are quantitative and are
+          most effectively communicated through position. Additionally, color
+          encodings seperate the stops (pink for route 1, orange for route 43,
+          blue for SL 4, and green for SL 5). This allows users to quickly
+          recognize the stops they are viewing. We visualized the linking of
+          data points through highlighting since it will be easy for users to
+          recognize the connection between points. We have two sets of bar
+          charts: one for the average delay in minutes, and the other for the
+          average frequency of delays per stop and route.
         </em>
         <a
           href="https://docs.google.com/presentation/d/19Cy82G8iFgubddoUPOIfgoOTV6mwtGmIPv90Rn9g0zE/edit?usp=sharing"
@@ -455,17 +399,11 @@
     <!-- Scripts at the end avoid need for dealing with async, defer, or onload event handlers -->
 
     <script src="lib/d3.v5.12.0/d3.min.js"></script>
-    <!-- <script src="route-43-min-delay-static.js"></script>  -->
-    <!-- <script src="filters.js"></script>
-    <script src="geomap.js"></script> -->
-    <script src="barchart.js"></script>
-    <script src="barfreq.js"></script>
-    <!-- <script src="main.js"></script>  -->
+    <script src="lib/d3-tip.js"></script>
     <script src="filter.js"></script>
+    <script src="avMinDelay.js"></script>
+    <script src="avFreqDelay.js"></script>
     <script src="map.js"></script>
     <script src="main.js"></script>
-    <!-- <script src="route-1-min-delay-static.js"></script> -->
-    <!-- <script src="route-43-min-delay-static.js"></script> -->
-    <!-- <script src="route-sl4-min-delay-static.js"></script> -->
   </body>
 </html>
