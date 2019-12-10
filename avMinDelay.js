@@ -22,7 +22,7 @@ function route1() {
     .padding(0.1);
 
   d3.json("stopskey.json").then(function(data) {
-    console.log(data);
+    
 
     // dat = data.filter(function(d) {
     //   return d.outbound === 1;
@@ -41,12 +41,12 @@ function route1() {
         dat = dat.filter(function(d) {
           return d.outbound === 1;
         });
-        console.log(dat);
+        
       } else {
         dat = dat.filter(function(d) {
           return d.outbound == 0;
         });
-        console.log(dat);
+        
       }
 
       svg.selectAll(".bar").remove();
@@ -207,7 +207,7 @@ function route43() {
     .padding(0.1);
 
   d3.json("stopskey.json").then(function(data) {
-    console.log(data);
+    
 
     // dat = data.filter(function(d) {
     //   return d.outbound === 1;
@@ -226,12 +226,12 @@ function route43() {
         dat = dat.filter(function(d) {
           return d.outbound === 1;
         });
-        console.log(dat);
+        
       } else {
         dat = dat.filter(function(d) {
           return d.outbound == 0;
         });
-        console.log(dat);
+        
       }
 
       svg.selectAll(".bar").remove();
@@ -393,7 +393,7 @@ function routesl4() {
     .padding(0.1);
 
   d3.json("stopskey.json").then(function(data) {
-    console.log(data);
+    
 
     // dat = data.filter(function(d) {
     //   return d.outbound === 1;
@@ -412,12 +412,12 @@ function routesl4() {
         dat = dat.filter(function(d) {
           return d.outbound === 1;
         });
-        console.log(dat);
+        
       } else {
         dat = dat.filter(function(d) {
           return d.outbound == 0;
         });
-        console.log(dat);
+        
       }
 
       svg.selectAll(".bar").remove();
@@ -579,7 +579,7 @@ function routesl5() {
     .padding(0.1);
 
   d3.json("stopskey.json").then(function(data) {
-    console.log(data);
+    
 
     data = data.filter(function(d) {
       return d.route == "sl5";
@@ -594,12 +594,12 @@ function routesl5() {
         dat = dat.filter(function(d) {
           return d.outbound === 1;
         });
-        console.log(dat);
+        
       } else {
         dat = dat.filter(function(d) {
           return d.outbound == 0;
         });
-        console.log(dat);
+        
       }
 
       svg.selectAll(".bar").remove();
